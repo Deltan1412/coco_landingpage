@@ -17,8 +17,8 @@ export function Nav() {
   const close = () => setOpen(false);
 
   return (
-    <nav className="nav" id="top">
-      <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+    <nav className="nav">
+      <Logo />
 
       <div className="nav-links">
         {NAV_LINKS.map((l) => (

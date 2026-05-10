@@ -1,5 +1,6 @@
 import type { Tweaks } from '@/types/tweaks';
 import { HeroArt } from './HeroArt';
+import { REGISTER_LINK } from '@/constants/links';
 
 export interface HeroProps {
   tweaks: Tweaks;
@@ -43,10 +44,10 @@ export function Hero({ tweaks }: HeroProps) {
           an idea. Walk out with a working AI product — built by you, supported by us.
         </p>
         <div className="hero-ctas">
-          <a href="#register">
+          <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">
             <button className="btn btn-primary">Reserve your seat</button>
           </a>
-          <a href="#roadmap">
+          <a href="#products">
             <button className="btn btn-ghost">See the journey ↓</button>
           </a>
         </div>

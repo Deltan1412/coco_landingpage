@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { Star } from '@/components/ui/Star';
 import { FakeQR } from '@/components/ui/FakeQR';
+import { ContactPanel } from '@/components/ui/ContactPanel';
+import { REGISTER_LINK } from '@/constants/links';
 import type { Tweaks } from '@/types/tweaks';
 
 export interface RegisterProps {
@@ -7,6 +10,8 @@ export interface RegisterProps {
 }
 
 export function Register({ tweaks }: RegisterProps) {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <section className="shell register" id="register">
       <div className="register-card">
@@ -25,12 +30,12 @@ export function Register({ tweaks }: RegisterProps) {
             keep building long after the cohort ends.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a href="#">
+            <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">
               <button className="btn btn-primary">Register now →</button>
             </a>
-            <a href="#">
-              <button className="btn btn-ghost">Talk to us first</button>
-            </a>
+            <button className="btn btn-ghost" onClick={() => setIsContactOpen(true)}>
+              Talk to us first
+            </button>
           </div>
           <div className="register-perks">
             <span>✓ Live sessions</span>
@@ -65,6 +70,7 @@ export function Register({ tweaks }: RegisterProps) {
           </div>
         </div>
       </div>
+      <ContactPanel isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </section>
   );
 }

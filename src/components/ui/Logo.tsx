@@ -1,8 +1,14 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-export function Logo({ className, ...props }: ComponentPropsWithoutRef<'a'>) {
+export function Logo({ className, onClick, ...props }: ComponentPropsWithoutRef<'a'>) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (onClick) onClick(e);
+  };
+
   return (
-    <a className={`logo ${className || ''}`} href="#top" {...props}>
+    <a className={`logo ${className || ''}`} href="/" onClick={handleClick} {...props}>
       <span className="logo-mark" aria-hidden>
         <svg viewBox="0 0 24 24" fill="none">
           <path
