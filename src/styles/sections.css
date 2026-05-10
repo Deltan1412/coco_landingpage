@@ -1,0 +1,23 @@
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.sec-head .tag {
+  background: var(--lime);
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.sec-head .tag.dark { background: var(--ink); color: #fff; }
+.sec-head .tag.paper { background: var(--paper); }
+.sec-head p {
+  margin: 0;
+  font-size: clamp(15px, 1.5vw, 18px);
+  max-width: 580px;
+  line-height: 1.4;
+}

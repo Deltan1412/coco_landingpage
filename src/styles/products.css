@@ -1,0 +1,75 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 130px;
+}
+.product-card {
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-card);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 9px 0 0 var(--ink); }
+.product-card.paper { background: var(--paper); }
+.product-card.lime { background: var(--lime); }
+.product-card.dark { background: var(--ink); color: #fff; }
+
+.product-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.85);
+  border: 1.5px solid var(--ink);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+}
+.product-card.dark .product-role { background: var(--lime); color: var(--ink); border-color: var(--ink); }
+.product-card h3 {
+  font-size: clamp(24px, 2.5vw, 30px);
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.product-card .by {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.4;
+  opacity: 0.85;
+}
+.product-mock {
+  margin-top: auto;
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 4px 0 0 var(--ink);
+  position: relative;
+}
+.product-card.dark .product-mock { background: #fff; color: var(--ink); }
+
+.mock-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.mock-row .swatch { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.mock-row .bar { flex: 1; height: 8px; border-radius: 4px; background: #E8E8E8; position: relative; overflow: hidden; }
+.mock-row .bar i { display: block; height: 100%; background: var(--ink); }
+.mock-row.lime { background: var(--lime); }
+.mock-row.paper { background: var(--paper); }
+.mock-row.outline { border: 1px dashed #C7C7C7; }

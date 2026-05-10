@@ -1,0 +1,23 @@
+.marquee {
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--lime);
+  overflow: hidden;
+  padding: 18px 0;
+  margin-bottom: 100px;
+}
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+  font-size: 22px;
+  font-weight: 500;
+  align-items: center;
+  width: max-content;
+}
+.marquee-track svg { flex-shrink: 0; }
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}

@@ -1,0 +1,78 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 0 100px;
+  position: relative;
+}
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+}
+.hero h1 .mark-lime {
+  background: var(--lime);
+  padding: 0 14px;
+  border-radius: 8px;
+  display: inline-block;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hero h1 .mark-line {
+  display: inline-block;
+  position: relative;
+}
+.hero h1 .mark-line::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 6px;
+  height: 14px;
+  background: var(--lime);
+  z-index: -1;
+}
+.hero p.lede {
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.45;
+  max-width: 540px;
+  margin: 0 0 36px;
+  color: var(--ink);
+}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Hero illustration: collage built from primitives */
+.hero-art {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.1 / 1;
+  min-height: 460px;
+}
+.hero-art .blob {
+  position: absolute;
+  border-radius: 50%;
+}
+.hero-art .star-spin {
+  position: absolute;
+  animation: spin 18s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.hero-art .pop {
+  position: absolute;
+  border: 1.5px solid var(--ink);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 14px 18px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-art .pop .dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--lime); border: 1.5px solid var(--ink);
+}
