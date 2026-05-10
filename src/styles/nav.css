@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 32px var(--gutter) 24px;
-  max-width: var(--container);
-  margin: 0 auto;
+  width: 100%;
   position: sticky;
   top: 0;
   background: var(--bg);

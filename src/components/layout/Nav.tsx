@@ -18,7 +18,7 @@ export function Nav() {
 
   return (
     <nav className="nav" id="top">
-      <Logo />
+      <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
 
       <div className="nav-links">
         {NAV_LINKS.map((l) => (

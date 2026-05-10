@@ -1,6 +1,8 @@
-export function Logo() {
+import { ComponentPropsWithoutRef } from 'react';
+
+export function Logo({ className, ...props }: ComponentPropsWithoutRef<'a'>) {
   return (
-    <a className="logo" href="#top">
+    <a className={`logo ${className || ''}`} href="#top" {...props}>
       <span className="logo-mark" aria-hidden>
         <svg viewBox="0 0 24 24" fill="none">
           <path
@@ -17,3 +19,4 @@ export function Logo() {
     </a>
   );
 }
+
