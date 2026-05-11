@@ -81,11 +81,18 @@
   gap: 4px;
 }
 
-/* Star deco */
+/* Star deco — sit behind the content */
 .star-deco {
   position: absolute;
   pointer-events: none;
   opacity: 0.85;
+  z-index: 0;
+}
+
+.trainers .sec-head,
+.trainers .trainer-grid {
+  position: relative;
+  z-index: 1;
 }
 
 .star-deco.tr1 {
