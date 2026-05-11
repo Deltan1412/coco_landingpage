@@ -31,7 +31,7 @@ export function Trainers({ tweaks }: TrainersProps) {
         <div className="trainer-grid">
           {TRAINERS.map((t, i) => (
             <div key={i} className="trainer">
-              <TrainerAvatar initials={t.initials} hue={t.hue} />
+              <TrainerAvatar initials={t.initials} hue={t.hue} photo={t.photo} name={t.name} />
               <div className="trainer-meta">
                 <span className="role-pill">{t.role}</span>
                 <h3 className="name">{t.name}</h3>

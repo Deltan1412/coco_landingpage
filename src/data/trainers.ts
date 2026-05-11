@@ -4,6 +4,7 @@ export interface Trainer {
   role: string;
   initials: string;
   hue: string;
+  photo?: string;
 }
 
 export const TRAINERS: Trainer[] = [
@@ -13,6 +14,7 @@ export const TRAINERS: Trainer[] = [
     role: 'Trainer',
     initials: 'TN',
     hue: '#FFD9A8',
+    photo: '/avatar/Tony.jpg',
   },
   {
     name: 'Mr. Tuan Anh',
@@ -27,5 +29,6 @@ export const TRAINERS: Trainer[] = [
     role: 'Trainer',
     initials: 'DP',
     hue: '#CFE3FF',
+    photo: '/avatar/Davis.jpg',
   },
 ];

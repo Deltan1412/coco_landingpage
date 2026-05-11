@@ -48,7 +48,7 @@ export function HeroArt() {
       <div className="pop" style={{ top: 60, left: 30, transform: 'rotate(-5deg)' }}>
         <span className="dot" />
         <code style={{ fontFamily: 'ui-monospace, Menlo, monospace', fontSize: 14 }}>
-          {`/build "weekly newsletter"`}
+          {`/build "your hope and dream"`}
         </code>
       </div>
 

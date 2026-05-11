@@ -1,9 +1,11 @@
 export interface TrainerAvatarProps {
   initials: string;
   hue: string;
+  photo?: string;
+  name?: string;
 }
 
-export function TrainerAvatar({ initials, hue }: TrainerAvatarProps) {
+export function TrainerAvatar({ initials, hue, photo, name }: TrainerAvatarProps) {
   return (
     <div
       className="avatar"
@@ -35,9 +37,18 @@ export function TrainerAvatar({ initials, hue }: TrainerAvatarProps) {
           fontWeight: 600,
           zIndex: 1,
           boxShadow: '0 4px 0 0 var(--ink)',
+          overflow: 'hidden',
         }}
       >
-        {initials}
+        {photo ? (
+          <img
+            src={photo}
+            alt={name ?? initials}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        ) : (
+          initials
+        )}
       </div>
       <span
         style={{
