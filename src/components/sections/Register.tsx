@@ -46,14 +46,14 @@ export function Register({ tweaks }: RegisterProps) {
         <div className="register-right">
           <Star
             size={60}
-            color="#B9FF66"
-            stroke="#B9FF66"
+            color="#fff26b"
+            stroke="#fff26b"
             style={{ position: 'absolute', top: 24, right: 24, opacity: 0.7 }}
           />
           <div
             style={{
               fontSize: 13,
-              color: '#B9FF66',
+              color: '#fff26b',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
             }}

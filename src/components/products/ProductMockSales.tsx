@@ -12,7 +12,7 @@ export function ProductMockSales() {
         <span style={{ fontSize: 18 }}>🎯</span>
         <span style={{ flex: 1, fontSize: 13 }}>Top objection: integration with Slack</span>
       </div>
-      <div className="mock-row" style={{ background: '#B9FF66' }}>
+      <div className="mock-row" style={{ background: '#fff26b' }}>
         <span style={{ fontSize: 18 }}>💡</span>
         <span style={{ flex: 1, fontSize: 13 }}>Champion phrase: "saves my Mondays"</span>
       </div>

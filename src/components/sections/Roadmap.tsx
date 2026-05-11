@@ -16,7 +16,7 @@ export function Roadmap() {
               <span className="week-label">{w.label}</span>
               <Star
                 size={28}
-                color={w.tone === 'lime' ? '#191A23' : '#B9FF66'}
+                color={w.tone === 'lime' ? '#191A23' : '#fff26b'}
                 stroke="#191A23"
               />
             </div>

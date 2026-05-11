@@ -10,7 +10,7 @@ export interface StarProps {
 
 export function Star({
   size = 80,
-  color = '#B9FF66',
+  color = '#fff26b',
   stroke = '#191A23',
   className = '',
   style = {},

@@ -14,10 +14,10 @@ export function Trainers({ tweaks }: TrainersProps) {
         {tweaks.showStars && (
           <>
             <div className="star-deco tr1">
-              <Star size={200} color="#B9FF66" stroke="#B9FF66" />
+              <Star size={200} color="#fff26b" stroke="#fff26b" />
             </div>
             <div className="star-deco tr2">
-              <Star size={140} color="#B9FF66" stroke="#B9FF66" />
+              <Star size={140} color="#fff26b" stroke="#fff26b" />
             </div>
           </>
         )}

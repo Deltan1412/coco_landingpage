@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="shell footer">
       <div className="footer-brand">
         <Logo />
-        <span className="footer-copy">© 2026 — A 4-week course for non-tech builders.</span>
+        <span className="footer-copy">© 2026 — WILDCATS AI STUDIO.</span>
       </div>
       <div className="links">
         <a href="#course">Course</a>
