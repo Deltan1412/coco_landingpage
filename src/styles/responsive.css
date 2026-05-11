@@ -12,7 +12,8 @@
 
   .hero {
     grid-template-columns: 1fr;
-    padding: 32px 0 72px;
+    padding-top: 32px;
+    padding-bottom: 72px;
     gap: 24px;
   }
   .hero-art-stage { max-width: 480px; margin: 0 auto; }
@@ -35,11 +36,11 @@
 
 /* Small tablet / large phone */
 @media (max-width: 768px) {
-  :root { --gutter: 22px; --radius-card: 28px; }
+  :root { --gutter: 32px; --radius-card: 28px; }
 
   .nav { padding: 18px var(--gutter) 14px; }
 
-  .hero { padding: 20px 0 48px; gap: 20px; }
+  .hero { padding-top: 20px; padding-bottom: 48px; gap: 20px; }
   .hero h1 { margin-bottom: 18px; }
   .hero p.lede { margin-bottom: 24px; }
   .hero-art-stage { max-width: 360px; }
@@ -89,13 +90,13 @@
 
 /* Phone */
 @media (max-width: 480px) {
-  :root { --gutter: 16px; }
+  :root { --gutter: 26px; }
 
   .nav { padding: 14px var(--gutter) 12px; }
   .logo { font-size: 20px; }
   .logo-mark { width: 32px; height: 32px; }
 
-  .hero { padding: 16px 0 40px; }
+  .hero { padding-top: 16px; padding-bottom: 40px; }
   .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 16px; }
   .hero p.lede { font-size: 15px; margin-bottom: 22px; }
   .hero-art-stage { max-width: 300px; }

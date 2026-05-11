@@ -3,7 +3,8 @@
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
   align-items: center;
-  padding: 60px 0 100px;
+  padding-top: 60px;
+  padding-bottom: 100px;
   position: relative;
 }
 
@@ -229,7 +230,7 @@
 }
 
 .hero-art .pop-output {
-  bottom: 18%;
+  bottom: 23%;
   right: 0;
   transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(4deg);
   background: #191A23;
