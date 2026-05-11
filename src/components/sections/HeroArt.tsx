@@ -108,6 +108,19 @@ export function HeroArt() {
           boxShadow: '0 3px 0 0 var(--ink)',
         }}
       />
+
+      {/* Spinning logo mark at the bottom-left of the lime blob */}
+      <div className="star-spin" style={{ bottom: 50, left: 230, width: 110, height: 110 }}>
+        <img
+          src="/logo.png"
+          alt=""
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+          }}
+        />
+      </div>
     </div>
   );
 }
