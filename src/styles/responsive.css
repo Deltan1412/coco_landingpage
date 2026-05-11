@@ -48,19 +48,61 @@
   .marquee { margin-bottom: 56px; padding: 14px 0; }
   .marquee-track { font-size: 18px; gap: 40px; }
 
-  .products,
+  .products {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    gap: var(--gutter); /* Gap between cards */
+    padding: 10vh 0; /* Vertical padding, horizontal will be managed by scroll-padding */
+    scroll-padding-left: 10vw; /* Padding from left edge of scroll container */
+    scroll-padding-right: 10vw; /* Padding from right edge of scroll container */
+    width: 100%;
+    margin-left: 0;
+    
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .products::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  .product-card {
+    scroll-snap-align: center; /* Snap to center */
+    flex: 0 0 calc(100vw - 2 * 10vw); /* Card takes 80vw of the viewport width */
+  }
   .trainer-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
   .products { margin-bottom: 72px; }
   .product-card { min-height: 0; padding: 26px; gap: 18px; }
-  .week { padding: 26px; min-height: 0; }
+  .week {
+    padding: 26px; min-height: 0;
+    scroll-snap-align: center; /* Snap to center */
+    flex: 0 0 calc(100vw - 2 * 10vw); /* Card takes 80vw of the viewport width */
+  }
 
   .roadmap-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 72px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    gap: var(--gutter); /* Gap between cards */
+    padding: 10vh 0; /* Vertical padding, horizontal will be managed by scroll-padding */
+    scroll-padding-left: 10vw; /* Padding from left edge of scroll container */
+    scroll-padding-right: 10vw; /* Padding from right edge of scroll container */
+    width: 100%;
+    margin-bottom: 72px; /* Keep existing margin bottom */
+    
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .roadmap-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .trainers { padding: 40px 22px; margin-bottom: 72px; }
@@ -86,6 +128,46 @@
   .footer .links { gap: 18px; }
 
   .btn { padding: 14px 24px; font-size: 16px; }
+
+  .product-carousel-container,
+  .roadmap-carousel-container { /* Added roadmap-carousel-container */
+    position: relative; /* Ensure children can be absolutely positioned */
+    width: 100%;
+  }
+
+  .product-carousel-arrow,
+  .roadmap-carousel-arrow { /* Added roadmap-carousel-arrow */
+    display: flex; /* Show arrows on mobile */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--bg);
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .product-carousel-arrow svg,
+  .roadmap-carousel-arrow svg { /* Added roadmap-carousel-arrow svg */
+    width: 24px;
+    height: 24px;
+    stroke: var(--ink);
+  }
+
+  .product-carousel-arrow-left,
+  .roadmap-carousel-arrow-left { /* Added roadmap-carousel-arrow-left */
+    left: var(--gutter);
+  }
+
+  .product-carousel-arrow-right,
+  .roadmap-carousel-arrow-right { /* Added roadmap-carousel-arrow-right */
+    right: var(--gutter);
+  }
 }
 
 /* Phone */
@@ -188,4 +270,9 @@
   .trainer {
     transition: none !important;
   }
+}
+
+.product-carousel-arrow,
+.roadmap-carousel-arrow { /* Added roadmap-carousel-arrow */
+  display: none; /* Hide arrows by default */
 }
