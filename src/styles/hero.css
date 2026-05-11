@@ -6,14 +6,17 @@
   padding: 60px 0 100px;
   position: relative;
 }
+
 .hero h1 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0 0 28px;
+  overflow-wrap: break-word;
 }
+
 .hero h1 .mark-lime {
   background: var(--lime);
   padding: 0 14px;
@@ -22,22 +25,28 @@
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
 .hero h1 .mark-line {
   display: inline-block;
   position: relative;
 }
+
 .hero h1 .mark-line::after {
   content: "";
   position: absolute;
-  left: 0; right: 0; bottom: 6px;
+  left: 0;
+  right: 0;
+  bottom: 6px;
   height: 14px;
   background: var(--lime);
   z-index: -1;
 }
+
 .hero h1 .typing-word {
   display: inline-block;
   min-width: 1.6ch;
 }
+
 .hero h1 .typing-caret {
   display: inline-block;
   margin-left: 2px;
@@ -46,51 +55,222 @@
   color: var(--ink);
   animation: caret-blink 1s steps(1) infinite;
 }
+
 @keyframes caret-blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .hero h1 .typing-caret { animation: none; }
+  .hero h1 .typing-caret {
+    animation: none;
+  }
 }
+
 .hero p.lede {
-  font-size: clamp(16px, 1.6vw, 20px);
+  font-size: clamp(15px, 1.6vw, 20px);
   line-height: 1.45;
   max-width: 540px;
-  margin: 0 0 36px;
+  margin: 0 0 32px;
   color: var(--ink);
 }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* Hero illustration: collage built from primitives */
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Hero illustration: collage built from primitives.
+   Everything lives inside .hero-art-stage which sets an explicit
+   square sizing context, so children can use percentage units. */
 .hero-art {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.1 / 1;
-  min-height: 460px;
+  display: flex;
+  justify-content: center;
 }
+
+.hero-art-stage {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Draggable affordance — also blocks page scroll while dragging on touch */
+.hero-art .draggable {
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  will-change: transform;
+  z-index: 2;
+}
+.hero-art .draggable.is-dragging {
+  cursor: grabbing;
+  z-index: 5;
+}
+
+/* Spin animation lives on an inner child so it doesn't conflict
+   with the drag-translate applied to the wrapper. */
+.hero-art .hero-spin-inner {
+  width: 100%;
+  height: 100%;
+  animation: spin 18s linear infinite;
+  display: block;
+}
+.hero-art .draggable.is-dragging .hero-spin-inner {
+  animation-play-state: paused;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .hero-art .blob {
   position: absolute;
   border-radius: 50%;
 }
-.hero-art .star-spin {
+
+.hero-art .blob-lime {
+  width: 82%;
+  height: 82%;
+  top: 8%;
+  right: 4%;
+  background: var(--lime);
+  border: 1.5px solid var(--ink);
+  box-shadow: 0 6px 0 0 var(--ink);
+}
+
+.hero-art .blob-ring {
+  width: 44%;
+  height: 44%;
+  top: 50%;
+  left: 0;
+  border: 16px solid var(--ink);
+}
+
+.hero-art .blob-dot {
+  width: 17%;
+  height: 17%;
+  top: 56%;
+  left: 11%;
+  background: var(--ink);
+}
+
+.hero-art .star-spin-tr {
   position: absolute;
-  animation: spin 18s linear infinite;
+  top: -2%;
+  right: -2%;
+  width: 26%;
+  height: 26%;
+  transform: translate(var(--dx, 0px), var(--dy, 0px));
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.hero-art .star-spin-tr svg {
+  width: 100%;
+  height: 100%;
 }
+
+.hero-art .hero-logo-spin {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  width: 24%;
+  height: 24%;
+  transform: translate(var(--dx, 0px), var(--dy, 0px));
+}
+.hero-art .hero-logo-spin img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .hero-art .pop {
   position: absolute;
   border: 1.5px solid var(--ink);
   border-radius: 22px;
   background: #fff;
   box-shadow: var(--shadow);
-  padding: 14px 18px;
-  font-size: 16px;
+  padding: 12px 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
+  max-width: 80%;
 }
+
 .hero-art .pop .dot {
-  width: 10px; height: 10px; border-radius: 50%; background: var(--lime); border: 1.5px solid var(--ink);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lime);
+  border: 1.5px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.hero-art .pop-prompt {
+  top: 14%;
+  left: 6%;
+  transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(-5deg);
+}
+
+.hero-art .pop-code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.hero-art .pop-output {
+  bottom: 18%;
+  right: 0;
+  transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(4deg);
+  background: #191A23;
+  color: #fff;
+  border-color: #191A23;
+}
+
+.hero-art .pop-output-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lime);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.hero-art .pop-output-text {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.hero-art .pop-output-text b {
+  color: var(--lime);
+}
+
+.hero-art .hero-plus {
+  position: absolute;
+  bottom: 35%;
+  left: 80%;
+  font-size: clamp(44px, 7vw, 80px);
+  line-height: 0.6;
+  font-weight: 600;
+  color: var(--ink);
+  transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(15deg);
+}
+
+.hero-art .hero-diamond {
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  width: 6%;
+  height: 6%;
+  min-width: 18px;
+  min-height: 18px;
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(45deg);
+  box-shadow: 0 3px 0 0 var(--ink);
 }
