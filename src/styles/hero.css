@@ -34,6 +34,24 @@
   background: var(--lime);
   z-index: -1;
 }
+.hero h1 .typing-word {
+  display: inline-block;
+  min-width: 1.6ch;
+}
+.hero h1 .typing-caret {
+  display: inline-block;
+  margin-left: 2px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ink);
+  animation: caret-blink 1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .typing-caret { animation: none; }
+}
 .hero p.lede {
   font-size: clamp(16px, 1.6vw, 20px);
   line-height: 1.45;

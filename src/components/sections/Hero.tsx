@@ -1,9 +1,53 @@
+import { useEffect, useState } from 'react';
 import type { Tweaks } from '@/types/tweaks';
 import { HeroArt } from './HeroArt';
 import { REGISTER_LINK } from '@/constants/links';
 
 export interface HeroProps {
   tweaks: Tweaks;
+}
+
+const TYPING_WORDS = ['code', 'ask'];
+const TYPE_SPEED_MS = 110;
+const DELETE_SPEED_MS = 70;
+const HOLD_MS = 1400;
+
+function TypingWord() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [phase, setPhase] = useState<'typing' | 'deleting'>('typing');
+
+  useEffect(() => {
+    const current = TYPING_WORDS[wordIndex];
+    let delay = TYPE_SPEED_MS;
+
+    if (phase === 'typing') {
+      if (text === current) {
+        delay = HOLD_MS;
+        const t = setTimeout(() => setPhase('deleting'), delay);
+        return () => clearTimeout(t);
+      }
+      const t = setTimeout(() => setText(current.slice(0, text.length + 1)), delay);
+      return () => clearTimeout(t);
+    }
+
+    if (phase === 'deleting') {
+      if (text === '') {
+        setWordIndex((i) => (i + 1) % TYPING_WORDS.length);
+        setPhase('typing');
+        return;
+      }
+      const t = setTimeout(() => setText(text.slice(0, -1)), DELETE_SPEED_MS);
+      return () => clearTimeout(t);
+    }
+  }, [text, phase, wordIndex]);
+
+  return (
+    <i className="typing-word">
+      {text}
+      <span className="typing-caret" aria-hidden="true">|</span>
+    </i>
+  );
 }
 
 export function Hero({ tweaks }: HeroProps) {
@@ -28,7 +72,7 @@ export function Hero({ tweaks }: HeroProps) {
     }
     return (
       <h1>
-        You don't <i>code</i>.
+        You don't <TypingWord />.
         <br />
         You <span className="mark-lime">build</span> with AI.
       </h1>
