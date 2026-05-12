@@ -24,13 +24,13 @@ export function HeroArt() {
           </div>
         </div>
 
-        {/* Floating chip — prompt */}
+        {/* Floating chip, prompt */}
         <div ref={promptRef} className="pop pop-prompt draggable">
           <span className="dot" />
           <code className="pop-code">{`/build "your hope and dream"`}</code>
         </div>
 
-        {/* Floating chip — output */}
+        {/* Floating chip, output */}
         <div ref={outputRef} className="pop pop-output draggable">
           <span className="pop-output-dot" />
           <span className="pop-output-text">

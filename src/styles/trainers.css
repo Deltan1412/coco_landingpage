@@ -81,7 +81,7 @@
   gap: 4px;
 }
 
-/* Star deco — sit behind the content */
+/* Star deco, sit behind the content */
 .star-deco {
   position: absolute;
   pointer-events: none;

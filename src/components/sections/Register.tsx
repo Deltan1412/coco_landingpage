@@ -26,7 +26,7 @@ export function Register({ tweaks }: RegisterProps) {
             Build by next month.
           </h2>
           <p>
-            One registration. Four weekends. A real product in your hands — and the confidence to
+            One registration. Four weekends. A real product in your hands, and the confidence to
             keep building long after the cohort ends.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
@@ -66,7 +66,7 @@ export function Register({ tweaks }: RegisterProps) {
           <div className="qr-caption">
             <strong>buildwithai.io/cohort-03</strong>
             <br />
-            Or tap "Register now" — same destination.
+            Or tap "Register now", same destination.
           </div>
         </div>
       </div>

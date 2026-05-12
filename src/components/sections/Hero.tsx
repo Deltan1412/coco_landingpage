@@ -85,7 +85,7 @@ export function Hero({ tweaks }: HeroProps) {
         {renderHeadline()}
         <p className="lede">
           A 4-week, hands-on course for marketers, sellers, operators and educators. Walk in with
-          an idea. Walk out with a working AI product — built by you, supported by us.
+          an idea. Walk out with a working AI product, built by you, supported by us.
         </p>
         <div className="hero-ctas">
           <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">

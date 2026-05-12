@@ -25,7 +25,7 @@ export function Trainers({ tweaks }: TrainersProps) {
           <span className="tag">You're not learning alone</span>
           <p>
             Meet the trainers walking with you for the next 4 weeks. Real builders who've shipped
-            real products — and now help you ship yours.
+            real products, and now help you ship yours.
           </p>
         </div>
         <div className="trainer-grid">

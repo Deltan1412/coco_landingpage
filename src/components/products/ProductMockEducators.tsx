@@ -6,7 +6,7 @@ export function ProductMockEducators() {
       </div>
       <div className="mock-row" style={{ background: '#F3F3F3' }}>
         <span style={{ fontSize: 14, fontWeight: 600 }}>📄</span>
-        <span style={{ flex: 1, fontSize: 13 }}>Lesson plan — 45 min</span>
+        <span style={{ flex: 1, fontSize: 13 }}>Lesson plan, 45 min</span>
         <span style={{ fontSize: 11, color: '#4CAF50' }}>✓</span>
       </div>
       <div className="mock-row" style={{ background: '#fff26b' }}>

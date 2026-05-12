@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Build with AI — A 4-week course landing page (TypeScript + React + Vite)",
+  "description": "Build with AI: A 4-week course landing page (TypeScript + React + Vite)",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

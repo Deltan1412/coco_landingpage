@@ -100,7 +100,7 @@
   aspect-ratio: 1 / 1;
 }
 
-/* Draggable affordance — also blocks page scroll while dragging on touch */
+/* Draggable affordance, also blocks page scroll while dragging on touch */
 .hero-art .draggable {
   cursor: grab;
   touch-action: none;

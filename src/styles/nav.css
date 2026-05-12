@@ -62,7 +62,7 @@
 .nav-cta:active { transform: translateY(2px); box-shadow: 0 1px 0 0 var(--ink); }
 .nav-cta.lime { background: var(--lime); color: var(--ink); }
 
-/* Mobile burger — hidden by default, shown via responsive.css */
+/* Mobile burger, hidden by default, shown via responsive.css */
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -93,7 +93,7 @@
   transform: translateY(-9.75px) rotate(-45deg);
 }
 
-/* Mobile menu overlay — only rendered on small screens via JS visibility */
+/* Mobile menu overlay, only rendered on small screens via JS visibility */
 .mobile-menu {
   display: none;
 }
