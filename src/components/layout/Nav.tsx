@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Logo } from '@/components/ui/Logo';
-import { NAV_LINKS } from '@/data/nav';
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -21,11 +20,8 @@ export function Nav() {
       <Logo />
 
       <div className="nav-links">
-        {NAV_LINKS.map((l) => (
-          <a key={l.href} href={l.href}>
-            {l.label}
-          </a>
-        ))}
+        <a href="https://www.wildcats.io/" target="_blank" rel="noopener noreferrer">About Wildcats</a>
+        <a href="https://www.wildcats.io/about" target="_blank" rel="noopener noreferrer">A Look At Our Team</a>
       </div>
 
       <a href="#register" className="nav-cta-link">
@@ -47,11 +43,8 @@ export function Nav() {
       {open && (
         <div className="mobile-menu" role="dialog" aria-modal="true">
           <div className="mobile-menu-links">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={close}>
-                {l.label}
-              </a>
-            ))}
+            <a href="https://www.wildcats.io/" target="_blank" rel="noopener noreferrer" onClick={close}>About Wildcats</a>
+            <a href="https://www.wildcats.io/about" target="_blank" rel="noopener noreferrer" onClick={close}>A Look At Our Team</a>
           </div>
           <a href="#register" onClick={close}>
             <button className="nav-cta lime">Join cohort →</button>

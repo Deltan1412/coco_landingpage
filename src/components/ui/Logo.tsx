@@ -9,9 +9,7 @@ export function Logo({ className, onClick, ...props }: ComponentPropsWithoutRef<
 
   return (
     <a className={`logo ${className || ''}`} href="/" onClick={handleClick} {...props}>
-      <span className="logo-mark" aria-hidden>
-        <img src="/logo.png" alt="" />
-      </span>
+      <img src="/logo.png" alt="" style={{ width: 32, height: 32, objectFit: 'contain' }} />
       <span>Build with AI</span>
     </a>
   );
