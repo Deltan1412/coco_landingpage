@@ -34,7 +34,7 @@ export function ScrollNav() {
     if (!activeId) return;
     setExpanded(true);
     if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setExpanded(false), 3000);
+    timer.current = setTimeout(() => setExpanded(false), 1500);
     return () => { if (timer.current) clearTimeout(timer.current); };
   }, [activeId]);
 
