@@ -4,6 +4,7 @@ import { FakeQR } from '@/components/ui/FakeQR';
 import { ContactPanel } from '@/components/ui/ContactPanel';
 import { REGISTER_LINK } from '@/constants/links';
 import type { Tweaks } from '@/types/tweaks';
+import { useLang } from '@/hooks/useLang';
 
 export interface RegisterProps {
   tweaks: Tweaks;
@@ -11,6 +12,7 @@ export interface RegisterProps {
 
 export function Register({ tweaks }: RegisterProps) {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const { t } = useLang();
 
   return (
     <section className="shell register" id="register">
@@ -18,29 +20,26 @@ export function Register({ tweaks }: RegisterProps) {
         <div className="register-left">
           <div className="register-cohort">
             <span className="blink" />
-            <span>Cohort 03 · enrolling now · 12 seats left</span>
+            <span>{t('register.cohort')}</span>
           </div>
           <h2>
-            Register today.
+            {t('register.title.line1')}
             <br />
-            Build by next month.
+            {t('register.title.line2')}
           </h2>
-          <p>
-            One registration. Four weekends. A real product in your hands, and the confidence to
-            keep building long after the cohort ends.
-          </p>
+          <p>{t('register.body')}</p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">
-              <button className="btn btn-primary">Register now →</button>
+              <button className="btn btn-primary">{t('register.cta.register')}</button>
             </a>
             <button className="btn btn-ghost" onClick={() => setIsContactOpen(true)}>
-              Talk to us first
+              {t('register.cta.talk')}
             </button>
           </div>
           <div className="register-perks">
-            <span>✓ Live sessions</span>
-            <span>✓ Project review</span>
-            <span>✓ Cohort group</span>
+            <span>{t('register.perks.live')}</span>
+            <span>{t('register.perks.review')}</span>
+            <span>{t('register.perks.group')}</span>
           </div>
         </div>
         <div className="register-right">
@@ -58,7 +57,7 @@ export function Register({ tweaks }: RegisterProps) {
               textTransform: 'uppercase',
             }}
           >
-            Scan to enroll
+            {t('register.qr.scan')}
           </div>
           <div className="qr-frame">
             <FakeQR pattern={tweaks.qrPattern} size={200} />
@@ -66,7 +65,7 @@ export function Register({ tweaks }: RegisterProps) {
           <div className="qr-caption">
             <strong>buildwithai.io/cohort-03</strong>
             <br />
-            Or tap "Register now", same destination.
+            {t('register.qr.caption')}
           </div>
         </div>
       </div>

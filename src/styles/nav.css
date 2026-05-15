@@ -32,8 +32,15 @@
 .logo-mark img { width: 22px; height: 22px; object-fit: contain; }
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 18px;
   align-items: center;
+}
+.nav-links-sep {
+  color: var(--ink);
+  opacity: 0.5;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
 }
 .nav-links a {
   font-size: 18px;
@@ -61,6 +68,48 @@
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 7px 0 0 var(--ink); }
 .nav-cta:active { transform: translateY(2px); box-shadow: 0 1px 0 0 var(--ink); }
 .nav-cta.lime { background: var(--lime); color: var(--ink); }
+
+/* Language toggle */
+.lang-toggle {
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 3px 0 0 var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 0 var(--ink);
+  background: var(--lime);
+}
+.lang-toggle:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 0 var(--ink);
+}
+.lang-toggle-opt {
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: 600;
+  opacity: 0.45;
+  transition: opacity .15s ease, background .15s ease, color .15s ease;
+}
+.lang-toggle-opt.active {
+  opacity: 1;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 700;
+}
+.lang-toggle-sep { opacity: 0.4; }
 
 /* Mobile burger, hidden by default, shown via responsive.css */
 .nav-burger {

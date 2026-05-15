@@ -24,7 +24,8 @@
 
   /* Show hamburger, hide inline nav links */
   .nav-links { display: none; }
-  .nav > .nav-cta-link { display: none; }
+  .nav > .nav-cta-link,
+  .nav > .nav-actions { display: none; }
   .nav-burger { display: flex; }
 
   .products,

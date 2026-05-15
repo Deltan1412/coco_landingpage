@@ -2,12 +2,15 @@ import { Star } from '@/components/ui/Star';
 import { TrainerAvatar } from '@/components/ui/TrainerAvatar';
 import { TRAINERS } from '@/data/trainers';
 import type { Tweaks } from '@/types/tweaks';
+import { useLang } from '@/hooks/useLang';
 
 export interface TrainersProps {
   tweaks: Tweaks;
 }
 
 export function Trainers({ tweaks }: TrainersProps) {
+  const { lang, t } = useLang();
+
   return (
     <section className="shell" id="trainers">
       <div className="trainers">
@@ -22,20 +25,17 @@ export function Trainers({ tweaks }: TrainersProps) {
           </>
         )}
         <div className="sec-head">
-          <span className="tag">You're not learning alone</span>
-          <p>
-            Meet the trainers walking with you for the next 4 weeks. Real builders who've shipped
-            real products, and now help you ship yours.
-          </p>
+          <span className="tag">{t('trainers.tag')}</span>
+          <p>{t('trainers.header')}</p>
         </div>
         <div className="trainer-grid">
-          {TRAINERS.map((t, i) => (
+          {TRAINERS.map((tr, i) => (
             <div key={i} className="trainer">
-              <TrainerAvatar initials={t.initials} hue={t.hue} photo={t.photo} name={t.name} />
+              <TrainerAvatar initials={tr.initials} hue={tr.hue} photo={tr.photo} name={tr.name} />
               <div className="trainer-meta">
-                <span className="role-pill">{t.role}</span>
-                <h3 className="name">{t.name}</h3>
-                <p className="occ">{t.occ}</p>
+                <span className="role-pill">{tr.role[lang]}</span>
+                <h3 className="name">{tr.name}</h3>
+                <p className="occ">{tr.occ[lang]}</p>
               </div>
             </div>
           ))}
