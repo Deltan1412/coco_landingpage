@@ -1,9 +1,12 @@
 import { Fragment } from 'react';
 import { Star } from '@/components/ui/Star';
 import { MARQUEE_ITEMS } from '@/data/marquee';
+import { useLang } from '@/hooks/useLang';
 
 export function Marquee() {
-  const repeated = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
+  const { lang } = useLang();
+  const items = MARQUEE_ITEMS.map((it) => it[lang]);
+  const repeated = [...items, ...items];
   return (
     <div className="marquee">
       <div className="marquee-track">

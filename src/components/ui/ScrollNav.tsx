@@ -1,17 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLang } from '@/hooks/useLang';
+import type { TranslationKey } from '@/data/translations';
 
-const SECTIONS = [
-  { id: 'course', label: 'Welcome' },
-  { id: 'products', label: 'Products' },
-  { id: 'roadmap', label: 'Roadmap' },
-  { id: 'trainers', label: 'Trainers' },
-  { id: 'register', label: 'Register' },
+const SECTIONS: { id: string; key: TranslationKey }[] = [
+  { id: 'course', key: 'scrollnav.welcome' },
+  { id: 'products', key: 'scrollnav.products' },
+  { id: 'roadmap', key: 'scrollnav.roadmap' },
+  { id: 'trainers', key: 'scrollnav.trainers' },
+  { id: 'register', key: 'scrollnav.register' },
 ];
 
 export function ScrollNav() {
   const [activeId, setActiveId] = useState('');
   const [expanded, setExpanded] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { t } = useLang();
 
   useEffect(() => {
     const update = () => {
@@ -29,7 +32,6 @@ export function ScrollNav() {
     return () => window.removeEventListener('scroll', update);
   }, []);
 
-  // Pop out for 3s whenever the active section changes
   useEffect(() => {
     if (!activeId) return;
     setExpanded(true);
@@ -39,19 +41,22 @@ export function ScrollNav() {
   }, [activeId]);
 
   return (
-    <nav className="scroll-nav" aria-label="Section shortcuts">
+    <nav className="scroll-nav" aria-label={t('scrollnav.aria')}>
       <div className={`scroll-nav-track${expanded ? ' expanded' : ''}`}>
-        {SECTIONS.map(({ id, label }) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            className={`scroll-nav-item${activeId === id ? ' active' : ''}`}
-            aria-label={label}
-          >
-            <span className="scroll-nav-dot" />
-            <span className="scroll-nav-label">{label}</span>
-          </a>
-        ))}
+        {SECTIONS.map(({ id, key }) => {
+          const label = t(key);
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`scroll-nav-item${activeId === id ? ' active' : ''}`}
+              aria-label={label}
+            >
+              <span className="scroll-nav-dot" />
+              <span className="scroll-nav-label">{label}</span>
+            </a>
+          );
+        })}
       </div>
     </nav>
   );

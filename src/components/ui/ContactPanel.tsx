@@ -1,6 +1,6 @@
-import React from 'react';
 import '@/styles/contact-panel.css';
 import { CONTACT_EMAIL, WHATSAPP, OFFICE_HOURS } from '@/constants/contact';
+import { useLang } from '@/hooks/useLang';
 
 interface ContactPanelProps {
   isOpen: boolean;
@@ -8,32 +8,33 @@ interface ContactPanelProps {
 }
 
 export function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
+  const { t } = useLang();
   if (!isOpen) return null;
 
   return (
     <div className="contact-overlay" onClick={onClose}>
       <div className="contact-panel" onClick={(e) => e.stopPropagation()}>
         <button className="contact-close" onClick={onClose}>&times;</button>
-        <h3>Talk to us</h3>
-        <p>Have questions about the cohort? We're here to help you decide if it's the right fit.</p>
+        <h3>{t('contact.title')}</h3>
+        <p>{t('contact.body')}</p>
 
         <div className="contact-info">
           <div className="contact-item">
-            <strong>Email</strong>
+            <strong>{t('contact.email')}</strong>
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </div>
           <div className="contact-item">
-            <strong>Office Hours</strong>
+            <strong>{t('contact.hours')}</strong>
             <span>{OFFICE_HOURS}</span>
           </div>
           <div className="contact-item">
-            <strong>WhatsApp</strong>
+            <strong>{t('contact.whatsapp')}</strong>
             <span>{WHATSAPP}</span>
           </div>
         </div>
 
         <button className="btn btn-primary" style={{ width: '100%', marginTop: 20 }} onClick={onClose}>
-          Got it
+          {t('contact.gotIt')}
         </button>
       </div>
     </div>

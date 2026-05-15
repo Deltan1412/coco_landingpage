@@ -4,24 +4,23 @@ import { ROADMAP } from '@/data/roadmap';
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { ArrowLeft } from '@/components/ui/ArrowLeft';
 import { ArrowRight } from '@/components/ui/ArrowRight';
+import { useLang } from '@/hooks/useLang';
 
 export function Roadmap() {
   const roadmapRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { lang, t } = useLang();
 
-  // Function to scroll to a specific index
   const scrollToCard = useCallback((index: number) => {
     if (roadmapRef.current && itemRefs.current[index]) {
       const card = itemRefs.current[index];
       const container = roadmapRef.current;
-      // Calculate scrollLeft to center the card
-      const scrollLeft = card.offsetLeft - (container.clientWidth - card.clientWidth) / 2;
+      const scrollLeft = card!.offsetLeft - (container.clientWidth - card!.clientWidth) / 2;
       container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
     }
   }, []);
 
-  // Handle scroll event to determine active index
   const handleScroll = useCallback(() => {
     if (roadmapRef.current && itemRefs.current.length > 0) {
       const scrollLeft = roadmapRef.current.scrollLeft;
@@ -49,7 +48,6 @@ export function Roadmap() {
   useEffect(() => {
     const container = roadmapRef.current;
     if (container) {
-      // Set initial active index
       handleScroll();
       container.addEventListener('scroll', handleScroll, { passive: true });
       return () => {
@@ -58,35 +56,29 @@ export function Roadmap() {
     }
   }, [handleScroll]);
 
-  // Click handlers for arrows
   const goToPrev = () => {
-    if (activeIndex > 0) {
-      scrollToCard(activeIndex - 1);
-    }
+    if (activeIndex > 0) scrollToCard(activeIndex - 1);
   };
 
   const goToNext = () => {
-    if (activeIndex < ROADMAP.length - 1) {
-      scrollToCard(activeIndex + 1);
-    }
+    if (activeIndex < ROADMAP.length - 1) scrollToCard(activeIndex + 1);
   };
 
   return (
     <section className="shell" id="roadmap">
-      <SectionHeader tag="The 4-week roadmap" tagStyle="lime">
-        Four weeks. Four immortal skills. The kind that stay useful even when the tools change names
-        again next year.
+      <SectionHeader tag={t('roadmap.tag')} tagStyle="lime">
+        {t('roadmap.header')}
       </SectionHeader>
-      <div className="relative roadmap-carousel-container"> {/* Added relative positioning and class for arrows */}
+      <div className="relative roadmap-carousel-container">
         <div className="roadmap-grid" ref={roadmapRef}>
           {ROADMAP.map((w, i) => (
             <div
               key={i}
               className={`week ${w.tone}`}
-              ref={(el) => (itemRefs.current[i] = el)} // Added ref to each card
+              ref={(el) => (itemRefs.current[i] = el)}
             >
               <div className="num-row">
-                <span className="week-label">{w.label}</span>
+                <span className="week-label">{t('roadmap.weekLabel')} {w.weekNum}</span>
                 <Star
                   size={28}
                   color={w.tone === 'lime' ? '#191A23' : '#fff26b'}
@@ -95,32 +87,30 @@ export function Roadmap() {
               </div>
               <div className="num">{w.n}</div>
               <h3>
-                {w.title}
+                {w.title[lang]}
                 <br />
-                <span style={{ fontWeight: 400, fontSize: 18, opacity: 0.85 }}>{w.sub}</span>
+                <span style={{ fontWeight: 400, fontSize: 18, opacity: 0.85 }}>{w.sub[lang]}</span>
               </h3>
-              <p className="desc">{w.desc}</p>
-              <span className="deliverable">{w.deliverable}</span>
+              <p className="desc">{w.desc[lang]}</p>
+              <span className="deliverable">{w.deliverable[lang]}</span>
             </div>
           ))}
         </div>
 
-        {/* Left Arrow */}
         {activeIndex > 0 && (
           <button
             onClick={goToPrev}
-            className="roadmap-carousel-arrow roadmap-carousel-arrow-left" // Added specific classes for styling
-            aria-label="Previous week"
+            className="roadmap-carousel-arrow roadmap-carousel-arrow-left"
+            aria-label={t('roadmap.prevAria')}
           >
             <ArrowLeft />
           </button>
         )}
-        {/* Right Arrow */}
         {activeIndex < ROADMAP.length - 1 && (
           <button
             onClick={goToNext}
-            className="roadmap-carousel-arrow roadmap-carousel-arrow-right" // Added specific classes for styling
-            aria-label="Next week"
+            className="roadmap-carousel-arrow roadmap-carousel-arrow-right"
+            aria-label={t('roadmap.nextAria')}
           >
             <ArrowRight />
           </button>

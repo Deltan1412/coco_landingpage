@@ -1,11 +1,16 @@
+interface LocalizedField {
+  en: string;
+  vi: string;
+}
+
 export interface NavLink {
-  label: string;
+  label: LocalizedField;
   href: string;
 }
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Products', href: '#products' },
-  { label: 'Roadmap', href: '#roadmap' },
-  { label: 'Trainers', href: '#trainers' },
-  { label: 'Register', href: '#register' },
+  { label: { en: 'Products', vi: 'Sản phẩm' }, href: '#products' },
+  { label: { en: 'Roadmap', vi: 'Lộ trình' }, href: '#roadmap' },
+  { label: { en: 'Trainers', vi: 'Giảng viên' }, href: '#trainers' },
+  { label: { en: 'Register', vi: 'Đăng ký' }, href: '#register' },
 ];
