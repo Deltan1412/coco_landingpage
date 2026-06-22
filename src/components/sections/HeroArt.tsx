@@ -20,7 +20,7 @@ export function HeroArt() {
         {/* Spinning star top-right (drag wrapper + spin inner) */}
         <div ref={starRef} className="star-spin-tr draggable">
           <div className="hero-spin-inner">
-            <Star size={120} />
+            <Star size={120} color="#fff26b" />
           </div>
         </div>
 

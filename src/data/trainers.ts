@@ -26,7 +26,7 @@ export const TRAINERS: Trainer[] = [
     occ: { en: 'AI Studio Leader', vi: 'Trưởng AI Studio' },
     role: { en: 'Programme Leader', vi: 'Trưởng chương trình' },
     initials: 'TA',
-    hue: '#fff26b',
+    hue: '#ffe019',
   },
   {
     name: 'Mr. Davis Pham',

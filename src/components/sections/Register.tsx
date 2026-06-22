@@ -52,7 +52,7 @@ export function Register({ tweaks }: RegisterProps) {
           <div
             style={{
               fontSize: 13,
-              color: '#fff26b',
+              color: '#ffe019',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
             }}

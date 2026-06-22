@@ -9,7 +9,7 @@ export function ProductMockEducators() {
         <span style={{ flex: 1, fontSize: 13 }}>Lesson plan, 45 min</span>
         <span style={{ fontSize: 11, color: '#4CAF50' }}>✓</span>
       </div>
-      <div className="mock-row" style={{ background: '#fff26b' }}>
+      <div className="mock-row" style={{ background: '#ffe019' }}>
         <span style={{ fontSize: 14, fontWeight: 600 }}>📋</span>
         <span style={{ flex: 1, fontSize: 13 }}>Worksheet (3 levels)</span>
         <span style={{ fontSize: 11 }}>✓</span>

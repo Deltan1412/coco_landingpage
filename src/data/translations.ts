@@ -78,8 +78,8 @@ export const TRANSLATIONS = {
 
   // Register
   'register.cohort': {
-    en: 'Cohort 03 · enrolling now · 12 seats left',
-    vi: 'Khoá 03 · đang tuyển sinh · còn 12 chỗ',
+    en: 'WILDCATS AI COURSE · enrolling now',
+    vi: 'WILDCATS AI COURSE · đang tuyển sinh',
   },
   'register.title.line1': { en: 'Register today.', vi: 'Đăng ký hôm nay.' },
   'register.title.line2': { en: 'Build by next month.', vi: 'Ra mắt sản phẩm tháng sau.' },
@@ -93,7 +93,7 @@ export const TRANSLATIONS = {
   'register.cta.talk': { en: 'Talk to us first', vi: 'Trò chuyện với chúng tôi' },
   'register.perks.live': { en: '✓ Live sessions', vi: '✓ Học trực tiếp' },
   'register.perks.review': { en: '✓ Project review', vi: '✓ Đánh giá dự án' },
-  'register.perks.group': { en: '✓ Cohort group', vi: '✓ Nhóm học viên' },
+  'register.perks.group': { en: '✓ AI-Studio group', vi: '✓ Nhóm học viên' },
   'register.qr.scan': { en: 'Scan to enroll', vi: 'Quét để đăng ký' },
   'register.qr.caption': {
     en: 'Or tap "Register now", same destination.',
@@ -103,7 +103,7 @@ export const TRANSLATIONS = {
   // Contact panel
   'contact.title': { en: 'Talk to us', vi: 'Liên hệ với chúng tôi' },
   'contact.body': {
-    en: "Have questions about the cohort? We're here to help you decide if it's the right fit.",
+    en: "Have questions about the course? We're here to help you decide if it's the right fit.",
     vi: 'Có thắc mắc về khoá học? Chúng tôi sẵn sàng giúp bạn cân nhắc xem khoá có phù hợp không.',
   },
   'contact.email': { en: 'Email', vi: 'Email' },

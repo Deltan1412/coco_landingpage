@@ -22,7 +22,7 @@
 .register-left h2 {
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.9;
   letter-spacing: -0.02em;
   margin: 0;
 }
