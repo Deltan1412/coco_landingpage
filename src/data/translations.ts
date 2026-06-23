@@ -4,6 +4,16 @@ export interface Translation {
 }
 
 export const TRANSLATIONS = {
+  // Promo banner
+  'promo.label': { en: 'Earlybird Discount', vi: 'Ưu đãi Earlybird' },
+  'promo.amount': { en: '50% OFF', vi: 'Giảm 50%' },
+  'promo.window': { en: 'for 72 hours only', vi: 'chỉ trong 72 giờ' },
+  'promo.days': { en: 'Days', vi: 'Ngày' },
+  'promo.hours': { en: 'Hours', vi: 'Giờ' },
+  'promo.minutes': { en: 'Mins', vi: 'Phút' },
+  'promo.seconds': { en: 'Secs', vi: 'Giây' },
+  'promo.ended': { en: 'Offer ended', vi: 'Ưu đãi đã kết thúc' },
+
   // Nav
   'nav.about': { en: 'About Wildcats', vi: 'Về Wildcats' },
   'nav.team': { en: 'A Look At Our Team', vi: 'Đội ngũ của chúng tôi' },

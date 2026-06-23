@@ -1,0 +1,108 @@
+/* Earlybird promo banner — bold black + lime DNA, sits above the hero */
+.promo-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px 20px;
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+}
+
+.promo-banner__headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(15px, 2.4vw, 22px);
+  letter-spacing: 0.02em;
+}
+
+.promo-banner__spark {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.promo-banner__label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.promo-banner__amount {
+  background: var(--lime);
+  color: var(--ink);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+}
+
+.promo-banner__window {
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.promo-countdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.promo-countdown__group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.promo-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 58px;
+  padding: 8px 6px;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 12px;
+  box-shadow: 0 4px 0 0 var(--lime);
+}
+
+.promo-countdown__value {
+  font-size: clamp(20px, 3.2vw, 28px);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.promo-countdown__label {
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.promo-countdown__sep {
+  font-size: clamp(18px, 2.6vw, 24px);
+  font-weight: 800;
+  color: var(--lime);
+}
+
+.promo-banner__ended {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@media (max-width: 520px) {
+  .promo-countdown__unit {
+    min-width: 46px;
+    padding: 6px 4px;
+  }
+  .promo-countdown__sep {
+    display: none;
+  }
+}

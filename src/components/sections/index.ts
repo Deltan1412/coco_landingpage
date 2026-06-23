@@ -1,3 +1,4 @@
+export { PromoBanner } from './PromoBanner';
 export { Hero } from './Hero';
 export { HeroArt } from './HeroArt';
 export { Marquee } from './Marquee';
