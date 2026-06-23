@@ -120,6 +120,12 @@ export const TRANSLATIONS = {
 
   // Logo
   'logo.wordmark': { en: 'Build with AI', vi: 'Build with AI' },
+
+  // Lang Popup
+  'langPopup.question': { en: 'Which language do you prefer to read in?', vi: 'Bạn muốn đọc bằng ngôn ngữ nào?' },
+  'langPopup.en': { en: 'English', vi: 'Tiếng Anh' },
+  'langPopup.vi': { en: 'Vietnamese', vi: 'Tiếng Việt' },
+  'langPopup.close': { en: 'Got it', vi: 'Đã hiểu' },
 } as const satisfies Record<string, Translation>;
 
 export type TranslationKey = keyof typeof TRANSLATIONS;
