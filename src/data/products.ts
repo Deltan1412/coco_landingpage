@@ -18,37 +18,37 @@ export interface ProductItem {
 
 export const PRODUCTS: ProductItem[] = [
   {
-    role: { en: 'For Marketers', vi: 'Dành cho Marketer' },
-    title: { en: 'Automatic Posts Planner', vi: 'Lập kế hoạch bài đăng tự động' },
+    role: { en: 'Module 1 Project', vi: 'Dự án Mô-đun 1' },
+    title: { en: 'Slides & Proposal Builder', vi: 'Tạo Slide & Proposal tự động' },
     by: {
       en:
-        'Plan and draft a month of social posts, newsletters and threads from one prompt, across every channel you own.',
+        'Generate polished presentation slides and business proposals in minutes using Claude Artifacts.',
       vi:
-        'Lên kế hoạch và soạn cả tháng bài đăng, newsletter và thread chỉ từ một prompt, cho mọi kênh bạn sở hữu.',
+        'Tạo slide thuyết trình và đề xuất dự án chuyên nghiệp trong vài phút qua tính năng Artifacts.',
     },
     tone: 'paper',
     mock: 'marketing',
   },
   {
-    role: { en: 'For Sellers', vi: 'Dành cho Sales' },
-    title: { en: 'Customer Insights Extractor', vi: 'Trích xuất insight khách hàng' },
+    role: { en: 'Module 3 Project', vi: 'Dự án Mô-đun 3' },
+    title: { en: 'Multi-Source Data Workflow', vi: 'Xử lý dữ liệu đa phương tiện' },
     by: {
       en:
-        'Turn calls, emails and tickets into objections, themes and winning phrases, without listening to a single recording yourself.',
+        'Build automated workflows that parse images, spreadsheet files, and PDFs to generate custom reports and charts.',
       vi:
-        'Biến cuộc gọi, email và ticket thành các phản đối, chủ đề và câu chốt đắt giá mà không cần nghe lại bất kỳ bản ghi nào.',
+        'Xây dựng quy trình tự động phân tích hình ảnh, file Excel và PDF để tạo báo cáo và biểu đồ tùy chỉnh.',
     },
     tone: 'lime',
     mock: 'sales',
   },
   {
-    role: { en: 'For Educators', vi: 'Dành cho Giáo viên' },
-    title: { en: 'Educating Materials Generator', vi: 'Tạo tài liệu giảng dạy' },
+    role: { en: 'E-commerce Case Study', vi: 'Dự án Doanh nghiệp' },
+    title: { en: 'CR Fashion Fanpage Bot & ERP', vi: 'Hệ thống Fanpage CR Fashion' },
     by: {
       en:
-        "From a single topic, generate lesson plans, worksheets, flashcards and quizzes, tailored to your students' level.",
+        'Connect Claude with Pancake, Viettel Post, and GHN to automate order tracking, prevent missed messages, and boost retention.',
       vi:
-        'Từ một chủ đề duy nhất, tạo giáo án, phiếu bài tập, flashcard và bài kiểm tra phù hợp với trình độ học sinh.',
+        'Kết nối Claude với Pancake, Viettel Post và GHN để tự động theo dõi đơn hàng, chống sót tin nhắn và giữ chân khách hàng.',
     },
     tone: 'dark',
     mock: 'educators',

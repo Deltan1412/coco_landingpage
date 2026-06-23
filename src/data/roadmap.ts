@@ -20,60 +20,57 @@ export const ROADMAP: RoadmapWeek[] = [
   {
     n: '01',
     weekNum: 1,
-    title: { en: 'Prompting techniques', vi: 'Kỹ thuật prompt' },
-    sub: { en: 'From idea to MVP', vi: 'Từ ý tưởng đến MVP' },
+    title: { en: 'Claude AI Environment', vi: 'Khai phá Môi trường Claude' },
+    sub: { en: '3 hours | 100% Practical', vi: '3 giờ | 100% Thực hành' },
     desc: {
       en:
-        'Learn how to talk to AI like a builder, not a tourist. Structure prompts that turn rough ideas into working drafts.',
+        'Understand how Claude Code and Claude AI process data. Use Artifacts to build slides, proposals, or landing pages.',
       vi:
-        'Học cách trò chuyện với AI như một builder, không phải khách du lịch. Cấu trúc prompt giúp biến ý tưởng thô thành bản nháp hoạt động được.',
+        'Hiểu cách Claude Code và Claude AI xử lý dữ liệu. Trực tiếp thiết kế Slide thuyết trình, Proposal hoặc Landing Page bằng Artifacts.',
     },
-    deliverable: { en: '↪ Your first MVP prompt', vi: '↪ Prompt MVP đầu tiên của bạn' },
+    deliverable: { en: '↪ Slide, Proposal, or Landing Page', vi: '↪ Slide, Proposal, hoặc Landing Page' },
     tone: 'paper',
   },
   {
     n: '02',
     weekNum: 2,
-    title: { en: 'Fundamentals', vi: 'Nền tảng' },
-    sub: { en: 'Advantages & limitations of AI', vi: 'Ưu điểm & giới hạn của AI' },
+    title: { en: 'Systems & Tokenomics', vi: 'Tư duy Hệ thống & Prompting' },
+    sub: { en: '3 hours | 100% Practical', vi: '3 giờ | 100% Thực hành' },
     desc: {
       en:
-        "Know when AI is the right tool, and when it isn't. Build mental models that age well as the tools change.",
+        'Master tokenomics, prevent memory loss in long documents, and control output quality above 80% using custom prompt frames.',
       vi:
-        'Biết khi nào AI là lựa chọn đúng và khi nào không. Xây dựng mô hình tư duy bền vững dù công cụ có thay đổi.',
+        'Làm chủ ngân sách hiệu năng và Tokenomics, ngăn Claude bị "mất trí nhớ". Xây dựng khung prompt để kiểm soát chất lượng kết quả.',
     },
-    deliverable: { en: '↪ Working knowledge map', vi: '↪ Bản đồ kiến thức ứng dụng' },
+    deliverable: { en: '↪ Standardized custom prompt frames', vi: '↪ Bộ khung Prompt chuẩn hóa' },
     tone: 'lime',
   },
   {
     n: '03',
     weekNum: 3,
-    title: { en: 'MVP + AI Agents', vi: 'MVP + AI Agents' },
-    sub: { en: 'Give your AI tools to work with', vi: 'Trang bị công cụ cho AI của bạn' },
+    title: { en: 'Idea to MVP & Projects', vi: 'Từ Ý tưởng đến MVP' },
+    sub: { en: '3 hours | 100% Practical', vi: '3 giờ | 100% Thực hành' },
     desc: {
       en:
-        'Connect your AI to spreadsheets, emails and APIs. Move from chatbot to coworker that actually does the task.',
+        'Configure Projects, Custom Instructions, and Knowledge Bases. Let Claude analyze multi-source data (images, sheets, docs) to build a prototype.',
       vi:
-        'Kết nối AI của bạn với bảng tính, email và API. Từ chatbot trở thành đồng nghiệp thực sự làm được việc.',
+        'Thiết lập Claude Projects, Custom Instructions và Knowledge Base. Phân tích dữ liệu đa nguồn để dựng bản chạy thử MVP.',
     },
-    deliverable: { en: '↪ A small, working agent', vi: '↪ Một AI agent nhỏ hoạt động được' },
+    deliverable: { en: '↪ Working Prototype & Claude Project', vi: '↪ Claude Project & bản chạy thử MVP' },
     tone: 'dark',
   },
   {
     n: '04',
     weekNum: 4,
-    title: { en: 'Ship your project', vi: 'Ra mắt dự án của bạn' },
-    sub: {
-      en: 'Your first personal, functional product',
-      vi: 'Sản phẩm cá nhân, hoạt động đầu tiên của bạn',
-    },
+    title: { en: 'Business Automation', vi: 'Tự động hóa Quy trình' },
+    sub: { en: '3 hours | 100% Practical', vi: '3 giờ | 100% Thực hành' },
     desc: {
       en:
-        'Polish, test and demo your build to the cohort. Walk away with one real thing you made, and the muscle to make the next one.',
+        'Complete and present your AI automation application. Receive expert review and design a long-term roadmap to scale after the cohort.',
       vi:
-        'Hoàn thiện, kiểm thử và demo sản phẩm trước lớp. Mang về một sản phẩm thật do bạn tạo ra và bản lĩnh để làm tiếp sản phẩm sau.',
+        'Hoàn thiện và trình bày dự án tự động hóa. Nhận đánh giá chuyên môn từ giảng viên và thiết lập lộ trình phát triển dài hạn.',
     },
-    deliverable: { en: '↪ Demo day', vi: '↪ Ngày demo' },
+    deliverable: { en: '↪ Demo Day & Scaling Roadmap', vi: '↪ Ngày Demo & Lộ trình mở rộng' },
     tone: 'paper',
   },
 ];

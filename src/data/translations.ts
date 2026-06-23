@@ -37,35 +37,35 @@ export const TRANSLATIONS = {
   'hero.typing.ask': { en: 'ask', vi: 'hỏi' },
   'hero.lede': {
     en:
-      'A 4-week, hands-on course for marketers, sellers, operators and educators. Walk in with an idea. Walk out with a working AI product, built by you, supported by us.',
+      'Not just an AI course, but a program to build a digital system of coworkers. Harness Claude AI, systems thinking, and prompt engineering to automate workflows and elevate AI into your Digital Chief of Staff.',
     vi:
-      'Khoá học thực hành 4 tuần dành cho marketer, sales, vận hành và giáo viên. Bước vào với một ý tưởng. Bước ra với một sản phẩm AI hoạt động thực sự, do bạn xây và chúng tôi đồng hành.',
+      'Không chỉ là khoá học AI, đây là chương trình xây dựng hệ thống cộng sự số vận hành cùng bạn. Làm chủ Claude AI, tư duy hệ thống và prompt thực chiến để tự động hoá vận hành và sở hữu một trợ lý điều hành số.',
   },
   'hero.cta.reserve': { en: 'Reserve your seat', vi: 'Giữ chỗ ngay' },
   'hero.cta.journey': { en: 'See the journey ↓', vi: 'Xem lộ trình ↓' },
 
   // Products section header
-  'products.tag': { en: 'Build it yourself', vi: 'Tự tay xây dựng' },
+  'products.tag': { en: 'Practical Solutions', vi: 'Giải pháp Thực chiến' },
   'products.header': {
     en:
-      "Three real products, one cohort. By the end of week 4, you'll have shipped the one that matters most for your job.",
+      'Build core templates, workflow automation tools, and connect integrations to solve actual operational challenges.',
     vi:
-      'Ba sản phẩm thật, một khoá học. Cuối tuần 4, bạn sẽ hoàn thành sản phẩm phù hợp nhất với công việc của mình.',
+      'Xây dựng các công cụ tự động hóa công việc và kết nối tích hợp để giải quyết các bài toán vận hành thực tế.',
   },
   'products.prevAria': { en: 'Previous product', vi: 'Sản phẩm trước' },
   'products.nextAria': { en: 'Next product', vi: 'Sản phẩm kế tiếp' },
 
   // Roadmap section header
-  'roadmap.tag': { en: 'The 4-week roadmap', vi: 'Lộ trình 4 tuần' },
+  'roadmap.tag': { en: '12-Hour Syllabus', vi: 'Chương trình 12 giờ thực chiến' },
   'roadmap.header': {
     en:
-      'Four weeks. Four immortal skills. The kind that stay useful even when the tools change names again next year.',
+      'Four structured modules to master Claude AI, Tokenomics, custom workspaces, and business automation workflows.',
     vi:
-      'Bốn tuần. Bốn kỹ năng bền vững — vẫn hữu ích kể cả khi công cụ đổi tên vào năm sau.',
+      'Bốn mô-đun thực hành thực chiến giúp làm chủ Claude AI, Tokenomics, không gian làm việc và tự động hoá quy trình.',
   },
   'roadmap.prevAria': { en: 'Previous week', vi: 'Tuần trước' },
   'roadmap.nextAria': { en: 'Next week', vi: 'Tuần kế tiếp' },
-  'roadmap.weekLabel': { en: 'Week', vi: 'Tuần' },
+  'roadmap.weekLabel': { en: 'Module', vi: 'Mô-đun' },
 
   // Trainers
   'trainers.tag': { en: "You're not learning alone", vi: 'Bạn không học một mình' },
@@ -78,16 +78,16 @@ export const TRANSLATIONS = {
 
   // Register
   'register.cohort': {
-    en: 'WILDCATS AI COURSE · enrolling now',
-    vi: 'WILDCATS AI COURSE · đang tuyển sinh',
+    en: 'CLAUDE AI FOR BUSINESS · enrolling now',
+    vi: 'CLAUDE AI FOR BUSINESS · đang tuyển sinh',
   },
   'register.title.line1': { en: 'Register today.', vi: 'Đăng ký hôm nay.' },
   'register.title.line2': { en: 'Build by next month.', vi: 'Ra mắt sản phẩm tháng sau.' },
   'register.body': {
     en:
-      'One registration. Four weekends. A real product in your hands, and the confidence to keep building long after the cohort ends.',
+      'Flexible self-paced schedule, 100% offline. Master systems thinking, context management, and build functional business automation workflows.',
     vi:
-      'Một lần đăng ký. Bốn cuối tuần. Một sản phẩm thật trong tay bạn, và sự tự tin để tiếp tục xây dựng sau khi khoá học kết thúc.',
+      'Lịch trình linh hoạt, 100% offline tự điều chỉnh tiến độ. Làm chủ tư duy hệ thống, quản lý ngữ cảnh và xây dựng luồng tự động hoá doanh nghiệp.',
   },
   'register.cta.register': { en: 'Register now →', vi: 'Đăng ký ngay →' },
   'register.cta.talk': { en: 'Talk to us first', vi: 'Trò chuyện với chúng tôi' },
@@ -99,6 +99,12 @@ export const TRANSLATIONS = {
     en: 'Or tap "Register now", same destination.',
     vi: 'Hoặc bấm "Đăng ký ngay", cùng một nơi.',
   },
+  'register.tuition.title': { en: 'Tuition & Special Offer', vi: 'Học phí & Ưu đãi' },
+  'register.tuition.original': { en: '2,900,000 VND', vi: '2.900.000 VNĐ' },
+  'register.tuition.promo': { en: '1,500,000 VND', vi: '1.500.000 VNĐ' },
+  'register.tuition.note': { en: 'Special discount to collect insights', vi: 'Hỗ trợ doanh nghiệp thu thập dữ liệu & insight' },
+  'register.requirement': { en: 'Required: Claude Pro/Team account', vi: 'Yêu cầu: Tài khoản Claude Pro/Team' },
+  'register.preCourse': { en: 'Pre-course video guides included', vi: 'Cung cấp bộ video hướng dẫn chuẩn bị' },
 
   // Contact panel
   'contact.title': { en: 'Talk to us', vi: 'Liên hệ với chúng tôi' },
