@@ -33,8 +33,7 @@ export function LangPopup() {
       <button 
         className="lang-popup-trigger" 
         onClick={() => {
-          localStorage.removeItem('coco.langPopupDismissed');
-          setIsVisible(true);
+          setLang(lang === 'en' ? 'vi' : 'en');
         }}
         aria-label="Change language / Thay đổi ngôn ngữ"
         title="Change language / Thay đổi ngôn ngữ"
