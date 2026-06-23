@@ -111,7 +111,7 @@ export const TRANSLATIONS = {
   },
   'register.tuition.title': { en: 'Tuition & Special Offer', vi: 'Học phí & Ưu đãi' },
   'register.tuition.original': { en: '2,900,000 VND', vi: '2.900.000 VNĐ' },
-  'register.tuition.promo': { en: '1,500,000 VND', vi: '1.500.000 VNĐ' },
+  'register.tuition.promo': { en: '1,499,000 VND', vi: '1.499.000 VNĐ' },
   'register.tuition.note': { en: 'Special discount to collect insights', vi: 'Hỗ trợ doanh nghiệp thu thập dữ liệu & insight' },
   'register.requirement': { en: 'Required: Claude Pro/Team account', vi: 'Yêu cầu: Tài khoản Claude Pro/Team' },
   'register.preCourse': { en: 'Pre-course video guides included', vi: 'Cung cấp bộ video hướng dẫn chuẩn bị' },

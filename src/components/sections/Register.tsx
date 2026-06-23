@@ -102,7 +102,7 @@ export function Register({ tweaks }: RegisterProps) {
             <FakeQR pattern={tweaks.qrPattern} size={200} />
           </div>
           <div className="qr-caption">
-            <strong>buildwithai.io/cohort-03</strong>
+            <strong>SCAN HERE</strong>
             <br />
             {t('register.qr.caption')}
           </div>
