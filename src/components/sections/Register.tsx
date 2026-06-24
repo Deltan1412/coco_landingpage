@@ -84,8 +84,8 @@ export function Register({ tweaks }: RegisterProps) {
         <div className="register-right">
           <Star
             size={60}
-            color="#fff26b"
-            stroke="#fff26b"
+            color="#ffe019"
+            stroke="#ffe019"
             style={{ position: 'absolute', top: 24, right: 24, opacity: 0.7 }}
           />
           <div

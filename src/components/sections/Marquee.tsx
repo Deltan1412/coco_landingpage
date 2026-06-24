@@ -13,7 +13,7 @@ export function Marquee() {
         {repeated.map((t, i) => (
           <Fragment key={i}>
             <span>{t}</span>
-            <Star size={28} color="#fff26b" stroke="#fff26b" />
+            <Star size={28} color="#ffe019" stroke="#ffe019" />
           </Fragment>
         ))}
       </div>
