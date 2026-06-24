@@ -1,6 +1,7 @@
 import { PromoBanner, Hero, Marquee, Products, Roadmap, Trainers, Register } from '@/components/sections';
 import { AppTweaksPanel } from '@/components/tweaks/AppTweaksPanel';
-import { LangPopup } from '@/components/ui/LangPopup';
+// import { LangPopup } from '@/components/ui/LangPopup';
+import { LangFab } from '@/components/ui/LangFab';
 import { useTweaks } from '@/hooks/useTweaks';
 import { TWEAK_DEFAULTS } from '@/constants/tweakDefaults';
 // import { Nav } from '@/components/layout/Nav';
@@ -14,7 +15,8 @@ export function App() {
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   return (
     <>
-      <LangPopup />
+      {/* <LangPopup /> */}
+      <LangFab />
       <PromoBanner />
       <Hero tweaks={tweaks} />
       {tweaks.showMarquee && <Marquee />}

@@ -1,3 +1,53 @@
+/* Floating circular language switch, fixed top-right */
+.lang-fab {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 60;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 4px 0 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.lang-fab:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 0 var(--ink);
+}
+
+.lang-fab:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 var(--ink);
+}
+
+.lang-fab__current {
+  line-height: 1;
+}
+
+.lang-fab__next {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .lang-fab {
+    width: 46px;
+    height: 46px;
+    font-size: 13px;
+    top: 12px;
+    right: 12px;
+  }
+}
+
 /* Earlybird promo banner — bold black + lime DNA, sits above the hero */
 .promo-banner {
   display: flex;
