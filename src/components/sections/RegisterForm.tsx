@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '@/styles/register-form.css';
 import { useLang } from '@/hooks/useLang';
+import { REGISTER_LINK } from '@/constants/links';
 import type { TranslationKey } from '@/data/translations';
+
+interface RegisterFormProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 type FieldName = 'name' | 'occupation' | 'email' | 'aiUsage' | 'expectations';
 type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -16,12 +22,27 @@ const EMPTY: Record<FieldName, string> = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function RegisterForm() {
+export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
   const { t, lang } = useLang();
   const [values, setValues] = useState<Record<FieldName, string>>(EMPTY);
   const [honeypot, setHoneypot] = useState('');
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
   const [status, setStatus] = useState<Status>('idle');
+
+  // Close on Escape and lock body scroll while the popup is open.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen, onClose]);
 
   const setField = (field: FieldName, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -55,6 +76,8 @@ export function RegisterForm() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
       setValues(EMPTY);
+      // On success, transfer the user to the payment page.
+      window.location.href = REGISTER_LINK;
     } catch {
       setStatus('error');
     }
@@ -88,15 +111,32 @@ export function RegisterForm() {
     </div>
   );
 
+  if (!isOpen) return null;
+
   return (
-    <section className="shell register-form-section" id="register-form">
-      <div className="register-form-card">
+    <div
+      className="register-form-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="register-form-title"
+      onClick={onClose}
+    >
+      <div className="register-form-modal" onClick={(e) => e.stopPropagation()}>
+        <button
+          type="button"
+          className="register-form-close"
+          aria-label={t('form.close')}
+          onClick={onClose}
+        >
+          &times;
+        </button>
+        <div className="register-form-card">
         <div className="register-form-intro">
           <div className="register-cohort">
             <span className="blink" />
             <span>{t('form.badge')}</span>
           </div>
-          <h2>{t('form.title')}</h2>
+          <h2 id="register-form-title">{t('form.title')}</h2>
           <p>{t('form.subtitle')}</p>
           <div className="register-form-perks">
             <span>{t('form.perk1')}</span>
@@ -144,7 +184,8 @@ export function RegisterForm() {
             {status === 'submitting' ? t('form.submitting') : t('form.submit')}
           </button>
         </form>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

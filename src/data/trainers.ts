@@ -10,6 +10,10 @@ export interface Trainer {
   initials: string;
   hue: string;
   photo?: string;
+  /** Zoom factor for the photo (1 = no zoom). */
+  photoZoom?: number;
+  /** Focal point for the photo, e.g. 'center 22%'. */
+  photoFocus?: string;
 }
 
 export const TRAINERS: Trainer[] = [
@@ -27,6 +31,9 @@ export const TRAINERS: Trainer[] = [
     role: { en: 'Programme Leader', vi: 'Trưởng chương trình' },
     initials: 'TA',
     hue: '#ffe019',
+    photo: '/avatar/Tuan_Anh.jpeg',
+    photoZoom: 1.6,
+    photoFocus: 'center 22%',
   },
   {
     name: 'Mr. Davis Pham',

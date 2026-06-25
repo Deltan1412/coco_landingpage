@@ -3,9 +3,11 @@ export interface TrainerAvatarProps {
   hue: string;
   photo?: string;
   name?: string;
+  photoZoom?: number;
+  photoFocus?: string;
 }
 
-export function TrainerAvatar({ initials, hue, photo, name }: TrainerAvatarProps) {
+export function TrainerAvatar({ initials, hue, photo, name, photoZoom, photoFocus }: TrainerAvatarProps) {
   return (
     <div
       className="avatar"
@@ -44,7 +46,15 @@ export function TrainerAvatar({ initials, hue, photo, name }: TrainerAvatarProps
           <img
             src={photo}
             alt={name ?? initials}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: photoFocus ?? 'center',
+              transform: photoZoom ? `scale(${photoZoom})` : undefined,
+              transformOrigin: photoFocus ?? 'center',
+              display: 'block',
+            }}
           />
         ) : (
           initials

@@ -3,7 +3,7 @@ import { Star } from '@/components/ui/Star';
 import { RegisterQR } from '@/components/ui/RegisterQR';
 import { ContactPanel } from '@/components/ui/ContactPanel';
 import { Countdown } from '@/components/ui/Countdown';
-import { REGISTER_LINK } from '@/constants/links';
+import { RegisterForm } from '@/components/sections/RegisterForm';
 import type { Tweaks } from '@/types/tweaks';
 import { useLang } from '@/hooks/useLang';
 
@@ -13,6 +13,7 @@ export interface RegisterProps {
 
 export function Register({ tweaks }: RegisterProps) {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const { t } = useLang();
 
   return (
@@ -75,9 +76,9 @@ export function Register({ tweaks }: RegisterProps) {
             </div>
           </div>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">
-              <button className="btn btn-primary">{t('register.cta.register')}</button>
-            </a>
+            <button className="btn btn-primary" onClick={() => setIsFormOpen(true)}>
+              {t('register.cta.register')}
+            </button>
             <button className="btn btn-ghost" onClick={() => setIsContactOpen(true)}>
               {t('register.cta.talk')}
             </button>
@@ -116,6 +117,7 @@ export function Register({ tweaks }: RegisterProps) {
         </div>
       </div>
       <ContactPanel isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <RegisterForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </section>
   );
 }
