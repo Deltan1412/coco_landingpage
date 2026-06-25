@@ -121,6 +121,45 @@ export const TRANSLATIONS = {
   'register.requirement': { en: 'Required: Claude Pro/Team account', vi: 'Yêu cầu: Tài khoản Claude Pro/Team' },
   'register.preCourse': { en: 'Pre-course video guides included', vi: 'Cung cấp bộ video hướng dẫn chuẩn bị' },
 
+  // Register form (interest form → Google Sheet)
+  'form.badge': { en: 'Limited seats · cohort filling up', vi: 'Số lượng có hạn · đang lấp đầy' },
+  'form.title': { en: 'Tell us about you.', vi: 'Kể cho chúng tôi về bạn.' },
+  'form.subtitle': {
+    en: 'Share a few details and we will tailor the cohort to your goals. Takes under a minute.',
+    vi: 'Chia sẻ vài thông tin để chúng tôi thiết kế khoá học phù hợp với mục tiêu của bạn. Chưa tới một phút.',
+  },
+  'form.perk1': { en: '✓ No coding required', vi: '✓ Không cần biết lập trình' },
+  'form.perk2': { en: '✓ Personalized guidance', vi: '✓ Hướng dẫn cá nhân hoá' },
+  'form.perk3': { en: '✓ We reply within 24h', vi: '✓ Phản hồi trong 24 giờ' },
+  'form.name.label': { en: 'Full name', vi: 'Họ và tên' },
+  'form.name.placeholder': { en: 'e.g. Linh Nguyen', vi: 'Ví dụ: Nguyễn Linh' },
+  'form.occupation.label': { en: 'Occupation / Domain', vi: 'Nghề nghiệp / Lĩnh vực' },
+  'form.occupation.placeholder': { en: 'e.g. Marketing manager, retail', vi: 'Ví dụ: Quản lý marketing, bán lẻ' },
+  'form.email.label': { en: 'Email', vi: 'Email' },
+  'form.email.placeholder': { en: 'you@email.com', vi: 'ban@email.com' },
+  'form.aiUsage.label': { en: 'How are you using AI now?', vi: 'Bạn đang dùng AI như thế nào?' },
+  'form.aiUsage.placeholder': {
+    en: 'Tools you use, tasks you automate, or "not yet"…',
+    vi: 'Công cụ bạn dùng, việc bạn tự động hoá, hoặc "chưa dùng"…',
+  },
+  'form.expectations.label': { en: 'Your expectations after the course', vi: 'Kỳ vọng của bạn sau khoá học' },
+  'form.expectations.placeholder': {
+    en: 'What do you want to be able to build or do?',
+    vi: 'Bạn muốn xây dựng hoặc làm được điều gì?',
+  },
+  'form.submit': { en: 'Submit', vi: 'Gửi đăng ký' },
+  'form.submitting': { en: 'Sending…', vi: 'Đang gửi…' },
+  'form.success': {
+    en: 'Thanks! We received your details and will be in touch soon.',
+    vi: 'Cảm ơn bạn! Chúng tôi đã nhận thông tin và sẽ liên hệ sớm.',
+  },
+  'form.error.required': { en: 'This field is required', vi: 'Vui lòng điền thông tin này' },
+  'form.error.email': { en: 'Enter a valid email', vi: 'Email không hợp lệ' },
+  'form.error.submit': {
+    en: 'Something went wrong. Please try again.',
+    vi: 'Đã có lỗi xảy ra. Vui lòng thử lại.',
+  },
+
   // Contact panel
   'contact.title': { en: 'Talk to us', vi: 'Liên hệ với chúng tôi' },
   'contact.body': {

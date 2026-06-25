@@ -8,3 +8,6 @@ vite.config.d.ts
 .env
 .env.*
 !.env.example
+./code/wildcats-ai-studio-91fc13906d5a.json
+.vercel
+.env*

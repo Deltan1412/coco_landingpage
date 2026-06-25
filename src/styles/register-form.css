@@ -1,0 +1,139 @@
+.register-form-section {
+  margin-bottom: 80px;
+}
+
+.register-form-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 0;
+  background: var(--bg);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Left intro panel */
+.register-form-intro {
+  background: var(--ink);
+  color: #fff;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+.register-form-intro .register-cohort {
+  background: var(--lime);
+  color: var(--ink);
+}
+.register-form-intro h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.register-form-intro p {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 420px;
+  color: #d6d6d6;
+}
+.register-form-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--lime);
+}
+
+/* Right form panel */
+.register-form-fields {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.register-field label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.register-field input,
+.register-field textarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 13px 16px;
+  width: 100%;
+  transition: box-shadow .12s ease, background .12s ease;
+}
+.register-field textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.45;
+}
+.register-field input::placeholder,
+.register-field textarea::placeholder {
+  color: var(--muted);
+}
+.register-field input:focus,
+.register-field textarea:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--lime);
+}
+.register-field.has-error input,
+.register-field.has-error textarea {
+  box-shadow: 0 0 0 3px #ff5c5c;
+}
+.register-field-error {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #d12f2f;
+}
+
+/* honeypot — kept out of the visual + a11y tree */
+.register-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.register-form-submit {
+  width: 100%;
+  margin-top: 6px;
+}
+.register-form-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.register-form-status {
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--ink);
+}
+.register-form-status.is-success {
+  background: var(--lime);
+  color: var(--ink);
+}
+.register-form-status.is-error {
+  background: #ffe5e5;
+  color: #b41f1f;
+}
