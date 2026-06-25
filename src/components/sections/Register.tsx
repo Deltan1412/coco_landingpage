@@ -1,9 +1,7 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Star } from '@/components/ui/Star';
 import { RegisterQR } from '@/components/ui/RegisterQR';
-import { ContactPanel } from '@/components/ui/ContactPanel';
 import { Countdown } from '@/components/ui/Countdown';
-import { REGISTER_LINK } from '@/constants/links';
 import type { Tweaks } from '@/types/tweaks';
 import { useLang } from '@/hooks/useLang';
 
@@ -12,7 +10,6 @@ export interface RegisterProps {
 }
 
 export function Register({ tweaks }: RegisterProps) {
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const { t } = useLang();
 
   return (
@@ -75,12 +72,12 @@ export function Register({ tweaks }: RegisterProps) {
             </div>
           </div>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">
+            <Link to="/register">
               <button className="btn btn-primary">{t('register.cta.register')}</button>
-            </a>
-            <button className="btn btn-ghost" onClick={() => setIsContactOpen(true)}>
-              {t('register.cta.talk')}
-            </button>
+            </Link>
+            <Link to="/contact">
+              <button className="btn btn-ghost">{t('register.cta.talk')}</button>
+            </Link>
           </div>
           <div className="register-perks">
             <span>{t('register.perks.live')}</span>
@@ -115,7 +112,6 @@ export function Register({ tweaks }: RegisterProps) {
           </div>
         </div>
       </div>
-      <ContactPanel isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </section>
   );
 }
