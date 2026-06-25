@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import '@/styles/register-form.css';
 import { useLang } from '@/hooks/useLang';
@@ -8,6 +8,8 @@ import type { TranslationKey } from '@/data/translations';
 interface RegisterFormProps {
   isOpen: boolean;
   onClose: () => void;
+  /** Element the popup centers itself over (the register card), instead of the viewport middle. */
+  anchorRef?: { current: HTMLElement | null };
 }
 
 type FieldName = 'name' | 'occupation' | 'email' | 'aiUsage' | 'expectations';
@@ -23,12 +25,14 @@ const EMPTY: Record<FieldName, string> = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
+export function RegisterForm({ isOpen, onClose, anchorRef }: RegisterFormProps) {
   const { t, lang } = useLang();
   const [values, setValues] = useState<Record<FieldName, string>>(EMPTY);
   const [honeypot, setHoneypot] = useState('');
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
   const [status, setStatus] = useState<Status>('idle');
+  const modalRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
 
   // Close on Escape and lock body scroll while the popup is open.
   useEffect(() => {
@@ -44,6 +48,35 @@ export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
       document.body.style.overflow = prevOverflow;
     };
   }, [isOpen, onClose]);
+
+  // Center the popup over the register card (the anchor) rather than the
+  // viewport middle, clamped so it always stays fully on screen.
+  useLayoutEffect(() => {
+    if (!isOpen) return;
+    const place = () => {
+      const anchor = anchorRef?.current;
+      const modal = modalRef.current;
+      if (!anchor || !modal) return;
+      const a = anchor.getBoundingClientRect();
+      const mw = modal.offsetWidth;
+      const mh = modal.offsetHeight;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const margin = 12;
+      const cx = a.left + a.width / 2;
+      const cy = a.top + a.height / 2;
+      const left = Math.min(Math.max(cx, mw / 2 + margin), vw - mw / 2 - margin);
+      const top = Math.min(Math.max(cy, mh / 2 + margin), vh - mh / 2 - margin);
+      setPos({ left, top });
+    };
+    place();
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, true);
+    return () => {
+      window.removeEventListener('resize', place);
+      window.removeEventListener('scroll', place, true);
+    };
+  }, [isOpen, anchorRef]);
 
   const setField = (field: FieldName, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -116,6 +149,8 @@ export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
 
   // Rendered on document.body via a portal so the fixed overlay is always
   // pinned to the viewport — immune to any ancestor's transform/scroll context.
+  // The make-or-break layout lives in inline styles so it can never be lost to
+  // stylesheet load-order, caching, or an overriding rule.
   return createPortal(
     <div
       className="register-form-overlay"
@@ -123,8 +158,35 @@ export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
       aria-modal="true"
       aria-labelledby="register-form-title"
       onClick={onClose}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 2147483000,
+        background: 'rgba(25, 26, 35, 0.8)',
+        backdropFilter: 'blur(4px)',
+        WebkitBackdropFilter: 'blur(4px)',
+      }}
     >
-      <div className="register-form-modal" onClick={(e) => e.stopPropagation()}>
+      <div
+        ref={modalRef}
+        className="register-form-modal"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          position: 'absolute',
+          left: pos ? pos.left : '50%',
+          top: pos ? pos.top : '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '100%',
+          maxWidth: 920,
+          maxHeight: '90vh',
+          display: 'flex',
+        }}
+      >
         <button
           type="button"
           className="register-form-close"
@@ -133,7 +195,10 @@ export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
         >
           &times;
         </button>
-        <div className="register-form-card">
+        <div
+          className="register-form-card"
+          style={{ width: '100%', maxHeight: '90vh', overflowY: 'auto', margin: 0 }}
+        >
         <div className="register-form-intro">
           <div className="register-cohort">
             <span className="blink" />

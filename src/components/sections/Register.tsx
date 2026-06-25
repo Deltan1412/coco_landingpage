@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Star } from '@/components/ui/Star';
 import { RegisterQR } from '@/components/ui/RegisterQR';
 import { ContactPanel } from '@/components/ui/ContactPanel';
@@ -14,11 +14,12 @@ export interface RegisterProps {
 export function Register({ tweaks }: RegisterProps) {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const registerCardRef = useRef<HTMLDivElement>(null);
   const { t } = useLang();
 
   return (
     <section className="shell register" id="register">
-      <div className="register-card">
+      <div className="register-card" ref={registerCardRef}>
         <div className="register-left">
           <div className="register-cohort">
             <span className="blink" />
@@ -117,7 +118,11 @@ export function Register({ tweaks }: RegisterProps) {
         </div>
       </div>
       <ContactPanel isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-      <RegisterForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+      <RegisterForm
+        isOpen={isFormOpen}
+        onClose={() => setIsFormOpen(false)}
+        anchorRef={registerCardRef}
+      />
     </section>
   );
 }
