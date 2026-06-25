@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import '@/styles/register-form.css';
 import { useLang } from '@/hooks/useLang';
 import { REGISTER_LINK } from '@/constants/links';
@@ -113,7 +114,9 @@ export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
 
   if (!isOpen) return null;
 
-  return (
+  // Rendered on document.body via a portal so the fixed overlay is always
+  // pinned to the viewport — immune to any ancestor's transform/scroll context.
+  return createPortal(
     <div
       className="register-form-overlay"
       role="dialog"
@@ -186,6 +189,7 @@ export function RegisterForm({ isOpen, onClose }: RegisterFormProps) {
         </form>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
