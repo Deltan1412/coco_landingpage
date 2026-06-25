@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import '@/styles/contact-panel.css';
 import { LangFab } from '@/components/ui/LangFab';
 import { useLang } from '@/hooks/useLang';
 import { CONTACT_EMAIL, WHATSAPP, OFFICE_HOURS } from '@/constants/contact';
+import { AI_STUDIO_URL } from '@/constants/links';
 
 export function ContactPage() {
   const { t } = useLang();
@@ -11,9 +11,9 @@ export function ContactPage() {
       <LangFab />
       <div className="register-page">
         <header className="register-page-header shell">
-          <Link to="/#register" className="register-page-back">
+          <a href={AI_STUDIO_URL} className="register-page-back">
             ← {t('form.back')}
-          </Link>
+          </a>
         </header>
         <section className="shell contact-page-section">
           <div className="contact-panel">

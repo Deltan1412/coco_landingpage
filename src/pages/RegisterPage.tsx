@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { RegisterForm } from '@/components/sections';
 import { LangFab } from '@/components/ui/LangFab';
 import { useLang } from '@/hooks/useLang';
+import { AI_STUDIO_URL } from '@/constants/links';
 
 export function RegisterPage() {
   const { t } = useLang();
@@ -10,9 +10,9 @@ export function RegisterPage() {
       <LangFab />
       <div className="register-page">
         <header className="register-page-header shell">
-          <Link to="/#register" className="register-page-back">
+          <a href={AI_STUDIO_URL} className="register-page-back">
             ← {t('form.back')}
-          </Link>
+          </a>
         </header>
         <RegisterForm />
       </div>

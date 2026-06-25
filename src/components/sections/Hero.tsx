@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import type { Tweaks } from '@/types/tweaks';
 import { HeroArt } from './HeroArt';
+import { REGISTER_PAGE_URL } from '@/constants/links';
 import { useLang } from '@/hooks/useLang';
 
 export interface HeroProps {
@@ -101,9 +101,9 @@ export function Hero({ tweaks }: HeroProps) {
           {t('hero.lede')}
         </p>
         <div className="hero-ctas">
-          <Link to="/register">
+          <a href={REGISTER_PAGE_URL}>
             <button className="btn btn-primary">{t('hero.cta.reserve')}</button>
-          </Link>
+          </a>
           <a href="#products">
             <button className="btn btn-ghost">{t('hero.cta.journey')}</button>
           </a>

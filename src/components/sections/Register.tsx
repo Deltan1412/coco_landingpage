@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { Star } from '@/components/ui/Star';
 import { RegisterQR } from '@/components/ui/RegisterQR';
 import { Countdown } from '@/components/ui/Countdown';
+import { REGISTER_PAGE_URL, CONTACT_PAGE_URL } from '@/constants/links';
 import type { Tweaks } from '@/types/tweaks';
 import { useLang } from '@/hooks/useLang';
 
@@ -72,12 +72,12 @@ export function Register({ tweaks }: RegisterProps) {
             </div>
           </div>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Link to="/register">
+            <a href={REGISTER_PAGE_URL}>
               <button className="btn btn-primary">{t('register.cta.register')}</button>
-            </Link>
-            <Link to="/contact">
+            </a>
+            <a href={CONTACT_PAGE_URL}>
               <button className="btn btn-ghost">{t('register.cta.talk')}</button>
-            </Link>
+            </a>
           </div>
           <div className="register-perks">
             <span>{t('register.perks.live')}</span>
