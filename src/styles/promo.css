@@ -60,6 +60,15 @@
   text-align: center;
 }
 
+.promo-banner__brand {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(14px, 2vw, 18px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
 .promo-banner__headline {
   display: flex;
   flex-wrap: wrap;

@@ -5,7 +5,8 @@ export interface Translation {
 
 export const TRANSLATIONS = {
   // Promo banner
-  'promo.label': { en: 'Earlybird Discount', vi: 'Ưu đãi Earlybird' },
+  'promo.brand': { en: 'CAT (CLAUDE AUTOMATION TRAINING)', vi: 'CAT (CLAUDE AUTOMATION TRAINING)' },
+  'promo.label': { en: 'Earlybird1 Discount', vi: 'Ưu đãi Earlybird1' },
   'promo.amount': { en: '50% OFF', vi: 'Giảm 50%' },
   'promo.window': { en: 'for 72 hours only', vi: 'chỉ trong 72 giờ' },
   'promo.days': { en: 'Days', vi: 'Ngày' },
@@ -45,11 +46,15 @@ export const TRANSLATIONS = {
   'hero.headline.underlineBottomPost': { en: ' with AI.', vi: ' cùng AI.' },
   'hero.typing.code': { en: 'code', vi: 'lập trình' },
   'hero.typing.ask': { en: 'ask', vi: 'hỏi' },
+  'hero.lede.brand': {
+    en: 'CAT (Claude Automation Training)',
+    vi: 'CAT (Claude Automation Training)',
+  },
   'hero.lede': {
     en:
-      'Not just an AI course, but a program to build a digital system of coworkers. Harness Claude AI, systems thinking, and prompt engineering to automate workflows and elevate AI into your Digital Chief of Staff.',
+      ' - Not just an AI course, but a program to build a digital system of coworkers. Harness Claude AI, systems thinking, and prompt engineering to automate workflows and elevate AI into your Digital Chief of Staff.',
     vi:
-      'Không chỉ là khoá học AI, đây là chương trình xây dựng hệ thống cộng sự số vận hành cùng bạn. Làm chủ Claude AI, tư duy hệ thống và prompt thực chiến để tự động hoá vận hành và sở hữu một trợ lý điều hành số.',
+      ' - Không chỉ là khoá học AI, đây là chương trình xây dựng hệ thống cộng sự số vận hành cùng bạn. Làm chủ Claude AI, tư duy hệ thống và prompt thực chiến để tự động hoá vận hành và sở hữu một trợ lý điều hành số.',
   },
   'hero.cta.reserve': { en: 'Reserve your seat', vi: 'Giữ chỗ ngay' },
   'hero.cta.journey': { en: 'See the journey ↓', vi: 'Xem lộ trình ↓' },
@@ -88,8 +93,8 @@ export const TRANSLATIONS = {
 
   // Register
   'register.cohort': {
-    en: 'CLAUDE AI FOR BUSINESS · enrolling now',
-    vi: 'CLAUDE AI FOR BUSINESS · đang tuyển sinh',
+    en: 'CAT (Claude Automation Training) · enrolling now',
+    vi: 'CAT (Claude Automation Training) · đang tuyển sinh',
   },
   'register.title.line1': { en: 'Register today.', vi: 'Đăng ký hôm nay.' },
   'register.title.line2': { en: 'Build by next month.', vi: 'Ra mắt sản phẩm tháng sau.' },
@@ -112,7 +117,7 @@ export const TRANSLATIONS = {
   'register.tuition.title': { en: 'Tuition & Special Offer', vi: 'Học phí & Ưu đãi' },
   'register.tuition.original': { en: '2,900,000 VND', vi: '2.900.000 VNĐ' },
   'register.tuition.promo': { en: '1,499,000 VND', vi: '1.499.000 VNĐ' },
-  'register.tuition.note': { en: 'Special discount to collect insights', vi: 'Hỗ trợ doanh nghiệp thu thập dữ liệu & insight' },
+  'register.tuition.note': { en: 'Special discount for EARLYBIRD1', vi: 'Ưu đãi đặc biệt cho EARLYBIRD1' },
   'register.requirement': { en: 'Required: Claude Pro/Team account', vi: 'Yêu cầu: Tài khoản Claude Pro/Team' },
   'register.preCourse': { en: 'Pre-course video guides included', vi: 'Cung cấp bộ video hướng dẫn chuẩn bị' },
 

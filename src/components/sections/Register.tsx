@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Star } from '@/components/ui/Star';
-import { FakeQR } from '@/components/ui/FakeQR';
+import { RegisterQR } from '@/components/ui/RegisterQR';
 import { ContactPanel } from '@/components/ui/ContactPanel';
+import { Countdown } from '@/components/ui/Countdown';
 import { REGISTER_LINK } from '@/constants/links';
 import type { Tweaks } from '@/types/tweaks';
 import { useLang } from '@/hooks/useLang';
@@ -58,6 +59,12 @@ export function Register({ tweaks }: RegisterProps) {
                 {t('register.tuition.original')}
               </span>
             </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
+              <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#ffe019', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                ⏳ {t('promo.window')}
+              </span>
+              <Countdown />
+            </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '13px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '10px' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 0.95 }}>
                 🔑 {t('register.requirement')}
@@ -99,7 +106,7 @@ export function Register({ tweaks }: RegisterProps) {
             {t('register.qr.scan')}
           </div>
           <div className="qr-frame">
-            <FakeQR pattern={tweaks.qrPattern} size={200} />
+            <RegisterQR size={200} />
           </div>
           <div className="qr-caption">
             <strong>SCAN HERE</strong>

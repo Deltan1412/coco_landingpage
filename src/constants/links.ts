@@ -1,1 +1,1 @@
-export const REGISTER_LINK = 'https://buildwithai.io/register';
+export const REGISTER_LINK = 'https://www.wildcats.io/plans-pricing/payment/eyJpbnRlZ3JhdGlvbkRhdGEiOnt9LCJwbGFuSWQiOiJkOTJlMGExYS1kMjg4LTQyZTQtYTM5Ni00ZWJkYzlhZjZjNDMiLCJjaGVja291dEZsb3dJZCI6ImM5Nzk3NDhiLTE1MGYtNDIxZi05YjQ5LThiZjE1NzNiZWJjZSIsImlzVjMiOnRydWV9';

@@ -96,7 +96,10 @@ export function Hero({ tweaks }: HeroProps) {
     <section className="hero shell" id="course">
       <div>
         {renderHeadline()}
-        <p className="lede">{t('hero.lede')}</p>
+        <p className="lede">
+          <strong>{t('hero.lede.brand')}</strong>
+          {t('hero.lede')}
+        </p>
         <div className="hero-ctas">
           <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer">
             <button className="btn btn-primary">{t('hero.cta.reserve')}</button>
