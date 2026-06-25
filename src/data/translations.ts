@@ -159,7 +159,6 @@ export const TRANSLATIONS = {
     en: 'Something went wrong. Please try again.',
     vi: 'Đã có lỗi xảy ra. Vui lòng thử lại.',
   },
-  'form.back': { en: 'Back to home', vi: 'Về trang chủ' },
 
   // Contact panel
   'contact.title': { en: 'Talk to us', vi: 'Liên hệ với chúng tôi' },

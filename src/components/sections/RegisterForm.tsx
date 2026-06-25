@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import '@/styles/register-form.css';
 import { useLang } from '@/hooks/useLang';
-import { REGISTER_LINK } from '@/constants/links';
 import type { TranslationKey } from '@/data/translations';
 
 type FieldName = 'name' | 'occupation' | 'email' | 'aiUsage' | 'expectations';
@@ -47,17 +46,18 @@ export function RegisterForm() {
     if (!validate()) return;
 
     setStatus('submitting');
-    // Write the record in the background. `keepalive` lets the request finish
-    // even after we redirect the user away to the registration link.
-    fetch('/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...values, company: honeypot, lang }),
-      keepalive: true,
-    }).catch(() => {});
-
-    // Lead the user straight to the registration/payment page.
-    window.location.href = REGISTER_LINK;
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...values, company: honeypot, lang }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus('success');
+      setValues(EMPTY);
+    } catch {
+      setStatus('error');
+    }
   };
 
   const field = (

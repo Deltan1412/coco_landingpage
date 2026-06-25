@@ -13,11 +13,6 @@
   padding: 20px;
 }
 
-.contact-page-section {
-  display: flex;
-  justify-content: center;
-}
-
 .contact-panel {
   background: #fff;
   border: 1.5px solid var(--ink);
