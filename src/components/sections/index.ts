@@ -6,3 +6,4 @@ export { Products } from './Products';
 export { Roadmap } from './Roadmap';
 export { Trainers } from './Trainers';
 export { Register } from './Register';
+export { RegisterForm } from './RegisterForm';
