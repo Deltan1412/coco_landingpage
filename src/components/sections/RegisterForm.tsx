@@ -101,6 +101,9 @@ export function RegisterForm({ isOpen, onClose, anchorRef }: RegisterFormProps) 
     if (!validate()) return;
 
     setStatus('submitting');
+    // Pre-open a blank tab synchronously within the user gesture context to prevent popup blocker
+    const paymentWindow = window.open('about:blank', '_blank');
+
     try {
       const res = await fetch('/api/register', {
         method: 'POST',
@@ -110,10 +113,16 @@ export function RegisterForm({ isOpen, onClose, anchorRef }: RegisterFormProps) 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
       setValues(EMPTY);
-      // On success, transfer the user to the payment page.
-      window.location.href = REGISTER_LINK;
+      // On success, redirect the pre-opened tab to the payment page.
+      if (paymentWindow) {
+        paymentWindow.location.href = REGISTER_LINK;
+      }
     } catch {
       setStatus('error');
+      // Close the tab if form submission failed
+      if (paymentWindow) {
+        paymentWindow.close();
+      }
     }
   };
 
