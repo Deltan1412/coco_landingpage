@@ -94,7 +94,7 @@ export function Hero({ tweaks }: HeroProps) {
 
   return (
     <section className="hero shell" id="course">
-      <div>
+      <div className="hero-copy">
         {renderHeadline()}
         <p className="lede">
           <strong>{t('hero.lede.brand')}</strong>

@@ -67,7 +67,7 @@
 }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 7px 0 0 var(--ink); }
 .nav-cta:active { transform: translateY(2px); box-shadow: 0 1px 0 0 var(--ink); }
-.nav-cta.lime { background: var(--lime); color: var(--ink); }
+.nav-cta.lime { background: var(--lime); color: #fff; }
 
 /* Language toggle */
 .lang-toggle {
@@ -91,6 +91,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 0 0 var(--ink);
   background: var(--lime);
+  color: #fff;
 }
 .lang-toggle:active {
   transform: translateY(1px);

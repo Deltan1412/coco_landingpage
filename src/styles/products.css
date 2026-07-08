@@ -19,7 +19,7 @@
 }
 .product-card:hover { transform: translateY(-4px); box-shadow: 0 9px 0 0 var(--ink); }
 .product-card.paper { background: var(--paper); }
-.product-card.lime { background: var(--lime); }
+.product-card.lime { background: var(--ink) url('/background/3.png') center / cover no-repeat; color: #fff; }
 .product-card.dark { background: var(--ink); color: #fff; }
 
 .product-role {
@@ -34,7 +34,10 @@
   font-weight: 500;
   width: fit-content;
 }
-.product-card.dark .product-role { background: var(--lime); color: var(--ink); border-color: var(--ink); }
+.product-card.dark .product-role { background: var(--lime); color: #fff; border-color: var(--ink); }
+/* Lime card sits on red: keep its light-bg children (role pill, mock) dark. */
+.product-card.lime .product-role { color: var(--ink); }
+.product-card.lime .product-mock { color: var(--ink); }
 .product-card h3 {
   font-size: clamp(24px, 2.5vw, 30px);
   font-weight: 700;
@@ -70,6 +73,6 @@
 .mock-row .swatch { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
 .mock-row .bar { flex: 1; height: 8px; border-radius: 4px; background: #E8E8E8; position: relative; overflow: hidden; }
 .mock-row .bar i { display: block; height: 100%; background: var(--ink); }
-.mock-row.lime { background: var(--lime); }
+.mock-row.lime { background: var(--lime); color: #fff; }
 .mock-row.paper { background: var(--paper); }
 .mock-row.outline { border: 1px dashed #C7C7C7; }

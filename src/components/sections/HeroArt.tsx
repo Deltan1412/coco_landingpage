@@ -11,23 +11,29 @@ export function HeroArt() {
 
   return (
     <div className="hero-art" aria-hidden>
-      <div className="hero-art-stage">
-        {/* Background composition (not draggable) */}
-        <div className="blob blob-lime" />
+      {/* LEFT cluster */}
+      <div className="hero-art-stage hero-art-left">
+        {/* Ring + dot "eye" (not draggable) */}
         <div className="blob blob-ring" />
         <div className="blob blob-dot" />
-
-        {/* Spinning star top-right (drag wrapper + spin inner) */}
-        <div ref={starRef} className="star-spin-tr draggable">
-          <div className="hero-spin-inner">
-            <Star size={120} color="#ffe019" />
-          </div>
-        </div>
 
         {/* Floating chip, prompt */}
         <div ref={promptRef} className="pop pop-prompt draggable">
           <span className="dot" />
           <code className="pop-code">{`/build "your hope and dream"`}</code>
+        </div>
+
+        {/* Diamond accent */}
+        <div ref={diamondRef} className="hero-diamond draggable" />
+      </div>
+
+      {/* RIGHT cluster */}
+      <div className="hero-art-stage hero-art-right">
+        {/* Spinning star (drag wrapper + spin inner) */}
+        <div ref={starRef} className="star-spin-tr draggable">
+          <div className="hero-spin-inner">
+            <Star size={120} color="#EF345E" />
+          </div>
         </div>
 
         {/* Floating chip, output */}
@@ -42,9 +48,6 @@ export function HeroArt() {
         <div ref={plusRef} className="hero-plus draggable">
           +
         </div>
-
-        {/* Diamond accent */}
-        <div ref={diamondRef} className="hero-diamond draggable" />
 
         {/* Spinning logo (drag wrapper + spin inner) */}
         <div ref={logoRef} className="hero-logo-spin draggable">

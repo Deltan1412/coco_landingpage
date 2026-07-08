@@ -1,0 +1,74 @@
+/* "Unlock new skills" scroll-split reveal (replaces the marquee bar). */
+.unlock {
+  margin: 40px auto 90px;
+}
+
+.unlock-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(160px, 24vw, 300px);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1.5px solid var(--ink);
+  box-shadow: var(--shadow);
+  background: var(--ink);
+}
+
+/* Illustration revealed behind the split box */
+.unlock-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Two red halves that slide apart on scroll */
+.unlock-slab {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: var(--lime);
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.unlock-slab-top {
+  top: 0;
+  align-items: flex-end;
+  border-bottom: 1.5px solid rgba(25, 26, 35, 0.15);
+}
+
+.unlock-slab-bottom {
+  bottom: 0;
+  align-items: flex-start;
+}
+
+.unlock-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 6vw, 72px);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Center each label on the split line so the two halves form one word. */
+.unlock-slab-top .unlock-label {
+  transform: translateY(50%);
+}
+.unlock-slab-bottom .unlock-label {
+  transform: translateY(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .unlock-slab {
+    transition: none;
+  }
+}

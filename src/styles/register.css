@@ -18,6 +18,7 @@
   flex-direction: column;
   gap: 26px;
   justify-content: center;
+  color: #fff;
 }
 .register-left h2 {
   font-size: clamp(30px, 4vw, 44px);
@@ -58,7 +59,7 @@
   gap: 24px;
   margin-top: 8px;
   font-size: 14px;
-  color: var(--ink);
+  color: #fff;
   flex-wrap: wrap;
 }
 

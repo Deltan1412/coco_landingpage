@@ -30,7 +30,7 @@ export const TRAINERS: Trainer[] = [
     occ: { en: 'AI Studio Leader', vi: 'Trưởng AI Studio' },
     role: { en: 'Programme Leader', vi: 'Trưởng chương trình' },
     initials: 'TA',
-    hue: '#ffe019',
+    hue: '#EF345E',
     photo: '/avatar/Tuan_Anh.jpeg',
     photoZoom: 1.6,
     photoFocus: 'center 22%',

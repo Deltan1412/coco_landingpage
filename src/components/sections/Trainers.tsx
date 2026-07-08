@@ -15,14 +15,9 @@ export function Trainers({ tweaks }: TrainersProps) {
     <section className="shell" id="trainers">
       <div className="trainers">
         {tweaks.showStars && (
-          <>
-            <div className="star-deco tr1">
-              <Star size={200} color="#ffe019" stroke="#ffe019" />
-            </div>
-            <div className="star-deco tr2">
-              <Star size={140} color="#ffe019" stroke="#ffe019" />
-            </div>
-          </>
+          <div className="star-deco tr2">
+            <Star size={140} color="#EF345E" stroke="#EF345E" />
+          </div>
         )}
         <div className="sec-head">
           <span className="tag">{t('trainers.tag')}</span>

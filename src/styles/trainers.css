@@ -1,5 +1,5 @@
 .trainers {
-  background: var(--ink);
+  background: var(--ink) url('/background/1.png') center / cover no-repeat;
   color: #fff;
   border-radius: var(--radius-card);
   padding: 70px 60px;
@@ -10,7 +10,7 @@
 
 .trainers .sec-head .tag {
   background: var(--lime);
-  color: var(--ink);
+  color: #fff;
 }
 
 .trainers .sec-head p {
@@ -68,6 +68,7 @@
 .trainer .role-pill {
   align-self: flex-start;
   background: var(--lime);
+  color: #fff;
   border: 1.5px solid var(--ink);
   padding: 6px 12px;
   border-radius: 999px;
@@ -93,12 +94,6 @@
 .trainers .trainer-grid {
   position: relative;
   z-index: 1;
-}
-
-.star-deco.tr1 {
-  top: -40px;
-  right: -30px;
-  width: 200px;
 }
 
 .star-deco.tr2 {

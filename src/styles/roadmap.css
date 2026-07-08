@@ -22,7 +22,7 @@
 }
 .week:hover { transform: translateY(-4px); box-shadow: 0 9px 0 0 var(--ink); }
 .week.paper { background: var(--paper); }
-.week.lime { background: var(--lime); }
+.week.lime { background: var(--ink) url('/background/3.png') center / cover no-repeat; color: #fff; }
 .week.dark { background: var(--ink); color: #fff; }
 
 .week .num-row {
@@ -40,7 +40,7 @@
   padding: 4px 12px;
 }
 .week.lime .week-label { background: var(--ink); color: var(--lime); }
-.week.dark .week-label { background: var(--lime); color: var(--ink); border-color: var(--lime); }
+.week.dark .week-label { background: var(--lime); color: #fff; border-color: var(--lime); }
 
 .week .num {
   font-size: clamp(72px, 9vw, 110px);
@@ -75,5 +75,5 @@
   border: 1.5px solid var(--ink);
   width: fit-content;
 }
-.week.dark .deliverable { background: var(--lime); color: var(--ink); }
+.week.dark .deliverable { background: var(--lime); color: #fff; }
 .week.lime .deliverable { background: var(--ink); color: var(--lime); }

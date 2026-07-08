@@ -73,7 +73,7 @@
 
 .lang-popup-btn.active {
   background: var(--lime);
-  color: var(--ink);
+  color: #fff;
   border-color: var(--lime);
   box-shadow: 0 3px 0 0 var(--ink);
   font-weight: 700;
@@ -135,7 +135,7 @@
 .lang-popup-trigger:hover {
   transform: scale(1.08) translateY(-1px);
   background: var(--lime);
-  color: var(--ink);
+  color: #fff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 

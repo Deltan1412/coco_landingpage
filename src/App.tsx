@@ -1,4 +1,4 @@
-import { PromoBanner, Hero, Marquee, Products, Roadmap, Trainers, Register } from '@/components/sections';
+import { PromoBanner, Hero, Marquee, UnlockReveal, Products, Roadmap, Trainers, Register } from '@/components/sections';
 import { AppTweaksPanel } from '@/components/tweaks/AppTweaksPanel';
 // import { LangPopup } from '@/components/ui/LangPopup';
 import { LangFab } from '@/components/ui/LangFab';
@@ -20,6 +20,7 @@ export function App() {
       <PromoBanner />
       <Hero tweaks={tweaks} />
       {tweaks.showMarquee && <Marquee />}
+      <UnlockReveal />
       <Products />
       <Roadmap />
       <Trainers tweaks={tweaks} />

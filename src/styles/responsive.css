@@ -11,12 +11,28 @@
   :root { --gutter: 36px; --radius-card: 36px; }
 
   .hero {
-    grid-template-columns: 1fr;
     padding-top: 32px;
     padding-bottom: 72px;
-    gap: 24px;
   }
-  .hero-art-stage { max-width: 480px; margin: 0 auto; }
+  /* Drop the side overlay; stack the two clusters below the text */
+  .hero-art {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    pointer-events: none;
+  }
+  .hero-art-stage {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: min(78%, 340px);
+    margin: 0 auto;
+  }
 
   .products { grid-template-columns: 1fr 1fr; }
   .trainer-grid { grid-template-columns: 1fr 1fr; }
@@ -186,7 +202,7 @@
   .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 16px; }
   .hero p.lede { font-size: 15px; margin-bottom: 22px; }
   .hero-art-stage { max-width: 300px; }
-  .hero-art .pop { padding: 9px 12px; max-width: 88%; }
+  .hero-art .pop { padding: 9px 16px; max-width: none; }
   .hero-art .pop-code { font-size: 11px; }
   .hero-art .pop-output-text { font-size: 12px; }
   .hero-art .pop .dot,

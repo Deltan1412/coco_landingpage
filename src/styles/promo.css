@@ -11,7 +11,7 @@
   border: 2px solid var(--ink);
   border-radius: 50%;
   background: var(--lime);
-  color: var(--ink);
+  color: #fff;
   font-weight: 800;
   font-size: 15px;
   letter-spacing: 0.04em;
@@ -93,7 +93,7 @@
 
 .promo-banner__amount {
   background: var(--lime);
-  color: var(--ink);
+  color: #fff;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   font-weight: 800;

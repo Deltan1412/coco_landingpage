@@ -46,7 +46,7 @@ export function Register({ tweaks }: RegisterProps) {
             marginBottom: '4px'
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-              <span style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#ffe019' }}>
+              <span style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#EF345E' }}>
                 {t('register.tuition.title')}
               </span>
               <span style={{ fontSize: '11px', opacity: 0.8, background: 'rgba(255,255,255,0.1)', padding: '2px 8px', borderRadius: '4px' }}>
@@ -62,7 +62,7 @@ export function Register({ tweaks }: RegisterProps) {
               </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
-              <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#ffe019', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#EF345E', display: 'flex', alignItems: 'center', gap: '6px' }}>
                 ⏳ {t('promo.window')}
               </span>
               <Countdown />
@@ -93,14 +93,14 @@ export function Register({ tweaks }: RegisterProps) {
         <div className="register-right">
           <Star
             size={60}
-            color="#ffe019"
-            stroke="#ffe019"
+            color="#EF345E"
+            stroke="#EF345E"
             style={{ position: 'absolute', top: 24, right: 24, opacity: 0.7 }}
           />
           <div
             style={{
               fontSize: 13,
-              color: '#ffe019',
+              color: '#EF345E',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
             }}
