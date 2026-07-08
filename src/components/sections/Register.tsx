@@ -46,26 +46,14 @@ export function Register({ tweaks }: RegisterProps) {
             marginBottom: '4px'
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-              <span style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#EF345E' }}>
+              <span style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#EEFF41' }}>
                 {t('register.tuition.title')}
-              </span>
-              <span style={{ fontSize: '11px', opacity: 0.8, background: 'rgba(255,255,255,0.1)', padding: '2px 8px', borderRadius: '4px' }}>
-                {t('register.tuition.note')}
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '28px', fontWeight: 800, color: 'var(--lime)', letterSpacing: '-0.02em' }}>
-                {t('register.tuition.promo')}
-              </span>
-              <span style={{ fontSize: '16px', textDecoration: 'line-through', opacity: 0.5 }}>
+              <span style={{ fontSize: '28px', fontWeight: 800, color: '#EEFF41', letterSpacing: '-0.02em' }}>
                 {t('register.tuition.original')}
               </span>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
-              <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#EF345E', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                ⏳ {t('promo.window')}
-              </span>
-              <Countdown />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '13px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '10px' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 0.95 }}>

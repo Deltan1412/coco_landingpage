@@ -114,7 +114,7 @@ export const TRANSLATIONS = {
     en: 'Or tap "Register now", same destination.',
     vi: 'Hoặc bấm "Đăng ký ngay", cùng một nơi.',
   },
-  'register.tuition.title': { en: 'Tuition & Special Offer', vi: 'Học phí & Ưu đãi' },
+  'register.tuition.title': { en: 'Tuition', vi: 'Học phí' },
   'register.tuition.original': { en: '2,900,000 VND', vi: '2.900.000 VNĐ' },
   'register.tuition.promo': { en: '1,499,000 VND', vi: '1.499.000 VNĐ' },
   'register.tuition.note': { en: 'Special discount for EARLYBIRD1', vi: 'Ưu đãi đặc biệt cho EARLYBIRD1' },

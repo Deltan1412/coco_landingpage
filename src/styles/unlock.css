@@ -44,7 +44,6 @@
 .unlock-slab-top {
   top: 0;
   align-items: flex-end;
-  border-bottom: 1.5px solid rgba(25, 26, 35, 0.15);
 }
 
 .unlock-slab-bottom {

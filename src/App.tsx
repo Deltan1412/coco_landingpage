@@ -17,7 +17,7 @@ export function App() {
     <>
       {/* <LangPopup /> */}
       <LangFab />
-      <PromoBanner />
+      {/* <PromoBanner /> — discount banner removed */}
       <Hero tweaks={tweaks} />
       {tweaks.showMarquee && <Marquee />}
       <UnlockReveal />

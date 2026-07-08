@@ -13,6 +13,7 @@
   margin: 0 auto;
 }
 
+
 @media (min-width: 1025px) {
   .hero {
     min-height: 520px;
@@ -34,7 +35,12 @@
 }
 
 .hero h1 .mark-lime {
-  background: var(--lime);
+  background-color: #101314;
+  background-image:
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='140'%20height='140'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='140'%20height='140'%20filter='url(%23n)'%20opacity='0.55'/%3E%3C/svg%3E"),
+    linear-gradient(to top right, #EF345E 0%, #101314 65%);
+  background-size: 140px 140px, auto;
+  background-blend-mode: overlay, normal;
   color: #fff;
   padding: 0 14px;
   border-radius: 8px;
@@ -123,6 +129,7 @@
 
 .hero-art-left {
   left: 0;
+  top: 56%;
 }
 
 .hero-art-right {
@@ -172,7 +179,7 @@
 .hero-art .blob-ring {
   width: 44%;
   height: 44%;
-  top: 50%;
+  top: 70%;
   left: 0;
   border: 16px solid var(--ink);
 }
@@ -180,8 +187,8 @@
 .hero-art .blob-dot {
   width: 17%;
   height: 17%;
-  top: 56%;
-  left: 11%;
+  top: 78%;
+  left: 25%;
   background: var(--ink);
 }
 
@@ -214,6 +221,31 @@
   object-fit: contain;
 }
 
+/* Spinning mascot badge, top-left of the hero (moved in from the corner) */
+.hero-art .hero-mascot {
+  position: absolute;
+  top: -35%;
+  left: 8%;
+  width: clamp(120px, 13vw, 180px);
+  aspect-ratio: 4263 / 3375;
+  transform: translate(var(--dx, 0px), var(--dy, 0px));
+  animation: hero-drift 8s ease-in-out infinite;
+}
+
+.hero-art .hero-mascot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* No clear corner once the hero stacks — hide the badge there. */
+@media (max-width: 1024px) {
+  .hero-art .hero-mascot {
+    display: none;
+  }
+}
+
 .hero-art .pop {
   position: absolute;
   border: 1.5px solid var(--ink);
@@ -239,8 +271,8 @@
 }
 
 .hero-art .pop-prompt {
-  top: 14%;
-  left: 6%;
+  top: 35%;
+  left: 2%;
   transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(-5deg);
 }
 
@@ -290,8 +322,8 @@
 
 .hero-art .hero-diamond {
   position: absolute;
-  top: 30%;
-  right: 50%;
+  top: 50%;
+  right: 42%;
   width: 6%;
   height: 6%;
   min-width: 18px;

@@ -38,7 +38,7 @@
   align-items: center;
   gap: 10px;
   background: var(--ink);
-  color: var(--lime);
+  color: #EEFF41;
   padding: 8px 16px;
   border-radius: 999px;
   font-size: 14px;
@@ -48,7 +48,7 @@
 .register-cohort .blink {
   width: 8px;
   height: 8px;
-  background: var(--lime);
+  background: #EEFF41;
   border-radius: 50%;
   animation: blink 1.4s ease-in-out infinite;
 }

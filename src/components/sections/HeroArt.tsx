@@ -8,11 +8,19 @@ export function HeroArt() {
   const plusRef = useDraggable<HTMLDivElement>();
   const diamondRef = useDraggable<HTMLDivElement>();
   const logoRef = useDraggable<HTMLDivElement>();
+  const mascotRef = useDraggable<HTMLDivElement>();
 
   return (
     <div className="hero-art" aria-hidden>
       {/* LEFT cluster */}
       <div className="hero-art-stage hero-art-left">
+        {/* Spinning mascot badge */}
+        <div ref={mascotRef} className="hero-mascot draggable">
+          <div className="hero-spin-inner">
+            <img src="/background/cat-mascot.png" alt="" />
+          </div>
+        </div>
+
         {/* Ring + dot "eye" (not draggable) */}
         <div className="blob blob-ring" />
         <div className="blob blob-dot" />
