@@ -1,5 +1,12 @@
 /* ───────── Responsive ───────── */
 
+/* Carousel containers anchor their scroll arrows (mobile). Always relative. */
+.product-carousel-container,
+.roadmap-carousel-container {
+  position: relative;
+  width: 100%;
+}
+
 /* Large desktop tweaks */
 @media (max-width: 1200px) {
   :root { --gutter: 48px; }
@@ -161,32 +168,32 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--bg);
-    border: none;
+    background-color: var(--ink);
+    border: 2px solid #fff;
     cursor: pointer;
-    padding: 12px;
+    padding: 11px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
     z-index: 10;
   }
 
   .product-carousel-arrow svg,
   .roadmap-carousel-arrow svg { /* Added roadmap-carousel-arrow svg */
-    width: 24px;
-    height: 24px;
-    stroke: var(--ink);
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
   }
 
   .product-carousel-arrow-left,
   .roadmap-carousel-arrow-left { /* Added roadmap-carousel-arrow-left */
-    left: var(--gutter);
+    left: 6px;
   }
 
   .product-carousel-arrow-right,
   .roadmap-carousel-arrow-right { /* Added roadmap-carousel-arrow-right */
-    right: var(--gutter);
+    right: 6px;
   }
 }
 
@@ -296,4 +303,56 @@
 .product-carousel-arrow,
 .roadmap-carousel-arrow { /* Added roadmap-carousel-arrow */
   display: none; /* Hide arrows by default */
+}
+
+/* ─────────────────────────────────────────────
+   Mobile-only refinements (≤768px)
+   1. no decorations  2. fixed section spacing  3. scroll arrows
+   ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* 1 — Remove decorative flourishes */
+  .hero-art,
+  .star-deco,
+  .register-right > svg,
+  .week .num-row svg {
+    display: none !important;
+  }
+
+  /* 2 — Fixed, consistent vertical gap between sections */
+  .hero { padding-bottom: var(--section-gap); }
+  .unlock { margin: 0 auto var(--section-gap); }
+  .products { padding: 24px 0; margin-bottom: var(--section-gap); }
+  .roadmap-grid { padding: 24px 0; margin-bottom: var(--section-gap); }
+  .trainers { margin-bottom: var(--section-gap); }
+  .register { margin-bottom: var(--section-gap); }
+
+  /* 3 — Show the horizontal-scroll direction arrows (overrides the
+     default `display:none` above via source order) */
+  /* Pin the carousel container to a definite viewport-based width so its
+     horizontal-scroll content can't inflate it past the viewport. Then the
+     absolutely-positioned arrows anchor to its real left/right edges. */
+  .product-carousel-container,
+  .roadmap-carousel-container {
+    position: relative;
+    width: calc(100vw - 2 * var(--gutter));
+    max-width: calc(100vw - 2 * var(--gutter));
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .product-carousel-arrow,
+  .roadmap-carousel-arrow {
+    display: flex;
+    top: 55%;
+    transform: translateY(-50%);
+  }
+  .product-carousel-arrow-left,
+  .roadmap-carousel-arrow-left {
+    left: 6px;
+    right: auto;
+  }
+  .product-carousel-arrow-right,
+  .roadmap-carousel-arrow-right {
+    right: 6px;
+    left: auto;
+  }
 }

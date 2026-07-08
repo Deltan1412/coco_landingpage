@@ -10,6 +10,7 @@
   --radius-pill: 14px;
   --container: 1280px;
   --gutter: 60px;
+  --section-gap: 56px; /* fixed vertical gap between sections on mobile */
 }
 
 * { box-sizing: border-box; }
