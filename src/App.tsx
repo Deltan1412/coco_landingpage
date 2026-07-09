@@ -1,4 +1,4 @@
-import { PromoBanner, Hero, Marquee, UnlockReveal, Products, Roadmap, Trainers, Register } from '@/components/sections';
+import { PromoBanner, Hero, Marquee, UnlockReveal, ProjectDemos, Roadmap, Trainers, Register } from '@/components/sections';
 import { AppTweaksPanel } from '@/components/tweaks/AppTweaksPanel';
 // import { LangPopup } from '@/components/ui/LangPopup';
 import { LangFab } from '@/components/ui/LangFab';
@@ -21,7 +21,8 @@ export function App() {
       <Hero tweaks={tweaks} />
       {tweaks.showMarquee && <Marquee />}
       <UnlockReveal />
-      <Products />
+      {/* <Products /> — the 3 original mock products, temporarily removed */}
+      <ProjectDemos />
       <Roadmap />
       <Trainers tweaks={tweaks} />
       <Register tweaks={tweaks} />

@@ -70,6 +70,14 @@ export const TRANSLATIONS = {
   'products.prevAria': { en: 'Previous product', vi: 'Sản phẩm trước' },
   'products.nextAria': { en: 'Next product', vi: 'Sản phẩm kế tiếp' },
 
+  // Project demos
+  'projects.prevImage': { en: 'Previous image', vi: 'Ảnh trước' },
+  'projects.nextImage': { en: 'Next image', vi: 'Ảnh kế tiếp' },
+  'projects.goToImage': { en: 'Go to image', vi: 'Xem ảnh' },
+  'projects.prevProject': { en: 'Previous project', vi: 'Dự án trước' },
+  'projects.nextProject': { en: 'Next project', vi: 'Dự án kế tiếp' },
+  'projects.goToProject': { en: 'Go to project', vi: 'Xem dự án' },
+
   // Roadmap section header
   'roadmap.tag': { en: '12-Hour Syllabus', vi: 'Chương trình 12 giờ thực chiến' },
   'roadmap.header': {

@@ -4,6 +4,7 @@ export { HeroArt } from './HeroArt';
 export { Marquee } from './Marquee';
 export { UnlockReveal } from './UnlockReveal';
 export { Products } from './Products';
+export { ProjectDemos } from './ProjectDemos';
 export { Roadmap } from './Roadmap';
 export { Trainers } from './Trainers';
 export { Register } from './Register';

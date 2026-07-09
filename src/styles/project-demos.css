@@ -1,0 +1,266 @@
+/* Horizontal project carousel: active card centred, neighbours peek + fade. */
+.pd-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Full-bleed: the stage spans the section, which is no longer inside .shell. */
+.pd-stage {
+  --pd-card-w: 80%;
+  --pd-gap: 32px;
+  position: relative;
+  width: 100%;
+}
+
+/* Native scroll-snap rail — real swipe on touch + trackpad, arrows drive it too.
+   The inline padding centres the first and last card. */
+.pd-rail {
+  position: relative;
+  display: flex;
+  gap: var(--pd-gap);
+  padding: 10px calc((100% - var(--pd-card-w)) / 2);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* A tight edge softening only — wide enough to hint at more, narrow enough
+     that the peeking neighbours stay legible. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+.pd-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.pd-card {
+  /* 100% of the rail's *content* box, which the inline padding has already
+     reduced to --pd-card-w of the stage. Keeps card width and the centring
+     padding in agreement, so the first and last card can reach dead centre. */
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-margin-top: 20vh;
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  opacity: 0.4;
+  transform: scale(0.94);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.pd-card.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Off-centre cards are decoration until swiped to — don't trap the keyboard. */
+.pd-card:not(.is-active) .pd-arrow,
+.pd-card:not(.is-active) .pd-dot {
+  visibility: hidden;
+}
+
+.pd-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pd-head h3 {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.pd-head p {
+  margin: 0;
+  max-width: 68ch;
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* ---- Project nav (outer) ---- */
+.pd-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  background: var(--lime);
+  color: var(--bg);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.pd-nav:hover {
+  transform: translateY(calc(-50% - 2px));
+}
+.pd-nav:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+/* Sit inside the peek gutter, not flush against the screen edge. */
+.pd-nav-left { left: var(--gutter); }
+.pd-nav-right { right: var(--gutter); }
+
+.pd-pager {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.pd-pager-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  transition: background 0.15s ease, width 0.2s ease;
+}
+.pd-pager-dot.is-active {
+  width: 34px;
+  background: var(--lime);
+  border-color: var(--ink);
+}
+.pd-pager-dot:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
+/* ---- Image carousel (inner) ---- */
+.pd-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pd-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-pill);
+}
+
+.pd-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pd-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+}
+/* Letterboxed: the whole screenshot stays visible, card height never jumps.
+   Pinned with inset rather than height:100% — as a grid/flow child the
+   percentage height resolves against an auto-sized row and the image
+   overflows the frame, cropping tall screenshots. */
+.pd-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pd-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 0 var(--ink);
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.15s ease, transform 0.12s ease;
+}
+.pd-arrow:hover {
+  opacity: 1;
+  transform: translateY(calc(-50% - 1px));
+}
+.pd-arrow:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 2px;
+}
+.pd-arrow-left { left: 14px; }
+.pd-arrow-right { right: 14px; }
+
+.pd-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.pd-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.pd-dot:hover { transform: scale(1.15); }
+.pd-dot.is-active { background: var(--ink); }
+.pd-dot:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-track,
+  .pd-card { transition: none; }
+  .pd-rail { scroll-behavior: auto; }
+}
+
+@media (max-width: 1100px) {
+  .pd-stage { --pd-card-w: 86%; }
+  .pd-nav { width: 46px; height: 46px; }
+}
+
+@media (max-width: 760px) {
+  .pd-stage {
+    --pd-card-w: 88%;
+    --pd-gap: 16px;
+  }
+  .pd-card {
+    padding: 28px 20px;
+    border-radius: 28px;
+    gap: 20px;
+    /* Scaling shrinks the tap target too much on small screens. */
+    transform: none;
+  }
+  .pd-card.is-active { transform: none; }
+  /* Arrows would cover the card at this width — swipe carries the interaction. */
+  .pd-nav { display: none; }
+  .pd-rail {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .pd-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  .pd-arrow-left { left: 8px; }
+  .pd-arrow-right { right: 8px; }
+}
