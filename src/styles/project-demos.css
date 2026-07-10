@@ -6,7 +6,10 @@
 
 /* Full-bleed: the stage spans the section, which is no longer inside .shell. */
 .pd-stage {
-  --pd-card-w: 80%;
+  /* The active card spans the shell content width (so it aligns with the other
+     sections), but the rail itself is full-bleed — the neighbouring projects
+     peek, blurred, in the space on either side. */
+  --pd-card-w: calc(min(var(--container), 100%) - 2 * var(--gutter));
   --pd-gap: 32px;
   position: relative;
   width: 100%;
@@ -23,10 +26,9 @@
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  /* A tight edge softening only — wide enough to hint at more, narrow enough
-     that the peeking neighbours stay legible. */
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  /* Soften the peeking neighbours toward the screen edges. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 }
 .pd-rail::-webkit-scrollbar {
   display: none;
@@ -47,13 +49,15 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  opacity: 0.4;
-  transform: scale(0.94);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 0.5;
+  transform: scale(0.92);
+  filter: blur(3px);
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
 }
 .pd-card.is-active {
   opacity: 1;
   transform: scale(1);
+  filter: none;
 }
 /* Off-centre cards are decoration until swiped to — don't trap the keyboard. */
 .pd-card:not(.is-active) .pd-arrow,
@@ -80,35 +84,6 @@
   line-height: 1.55;
   color: var(--ink);
 }
-
-/* ---- Project nav (outer) ---- */
-.pd-nav {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  transform: translateY(-50%);
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-items: center;
-  background: var(--lime);
-  color: var(--bg);
-  border: 1.5px solid var(--ink);
-  border-radius: 999px;
-  box-shadow: 3px 3px 0 0 var(--ink);
-  cursor: pointer;
-  transition: transform 0.12s ease;
-}
-.pd-nav:hover {
-  transform: translateY(calc(-50% - 2px));
-}
-.pd-nav:focus-visible {
-  outline: 3px solid var(--ink);
-  outline-offset: 3px;
-}
-/* Sit inside the peek gutter, not flush against the screen edge. */
-.pd-nav-left { left: var(--gutter); }
-.pd-nav-right { right: var(--gutter); }
 
 .pd-pager {
   display: flex;
@@ -233,14 +208,9 @@
   .pd-rail { scroll-behavior: auto; }
 }
 
-@media (max-width: 1100px) {
-  .pd-stage { --pd-card-w: 86%; }
-  .pd-nav { width: 46px; height: 46px; }
-}
 
 @media (max-width: 760px) {
   .pd-stage {
-    --pd-card-w: 88%;
     --pd-gap: 16px;
   }
   .pd-card {
